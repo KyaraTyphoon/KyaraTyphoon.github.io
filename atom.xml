@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://localhost:4000</id>
     <title>指定龙场</title>
-    <updated>2022-03-01T07:45:15.692Z</updated>
+    <updated>2022-03-01T07:56:40.141Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://localhost:4000"/>
     <link rel="self" href="http://localhost:4000/atom.xml"/>
@@ -36,10 +36,13 @@
 <h2 id="贴图展示">🚢 <em><strong>贴图展示</strong></em></h2>
 <p><img src="http://localhost:4000/post-images/1646120641496.png" alt="" loading="lazy"><br>
 <img src="http://localhost:4000/post-images/1646120645521.png" alt="" loading="lazy"><br>
-<img src="http://localhost:4000/post-images/1646120649003.png" alt="" loading="lazy"></p>
+<img src="http://localhost:4000/post-images/1646120649003.png" alt="" loading="lazy"><br>
+<img src="http://localhost:4000/post-images/1646121206572.png" alt="" loading="lazy"><br>
+<img src="http://localhost:4000/post-images/1646121334779.png" alt="" loading="lazy"></p>
 <h2 id="草图展示">🚢 <em><strong>草图展示</strong></em></h2>
 <p><img src="http://localhost:4000/post-images/1646120665876.png" alt="" loading="lazy"><br>
-<img src="http://localhost:4000/post-images/1646120669878.png" alt="" loading="lazy"></p>
+<img src="http://localhost:4000/post-images/1646120669878.png" alt="" loading="lazy"><br>
+<img src="http://localhost:4000/post-images/1646121199356.png" alt="" loading="lazy"></p>
 <h2 id="相关链接">🌄 <strong>相关链接</strong></h2>
 <p><strong>获奖名单</strong> ：<br>
 <a href="https://www.wanmei.com/hd/2108/net/wenchuang/prize3.html#pranav">https://www.wanmei.com/hd/2108/net/wenchuang/prize3.html#pranav</a><br>
@@ -47,6 +50,8 @@
 <a href="https://www.wanmei.com/hd/2108/net/wenchuang/detail.html?wid=1039">https://www.wanmei.com/hd/2108/net/wenchuang/detail.html?wid=1039</a><br>
 <strong>视频展示</strong> ：<br>
 <a href="https://www.bilibili.com/video/BV1pF411Y7cc?share_source=copy_web">https://www.bilibili.com/video/BV1pF411Y7cc?share_source=copy_web</a></p>
+<h2 id="特别感谢">🔆 <strong>特别感谢</strong></h2>
+<p>M26 建议我多找参考，以及对角色模型的参考、修改指导。</p>
 ]]></content>
     </entry>
     <entry>
