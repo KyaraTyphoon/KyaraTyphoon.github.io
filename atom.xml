@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://localhost:4000</id>
     <title>指定龙场</title>
-    <updated>2022-03-01T07:21:01.902Z</updated>
+    <updated>2022-03-01T07:45:15.692Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://localhost:4000"/>
     <link rel="self" href="http://localhost:4000/atom.xml"/>
@@ -10,6 +10,45 @@
     <logo>http://localhost:4000/images/avatar.png</logo>
     <icon>http://localhost:4000/favicon.ico</icon>
     <rights>All rights reserved 2022, 指定龙场</rights>
+    <entry>
+        <title type="html"><![CDATA[【完美世界文創大賽】U3D游戲場景《“最後”的工業之船》]]></title>
+        <id>http://localhost:4000/post/wan-mei-shi-jie-wen-chuang-da-sai-u3d-you-xi-chang-jing-lesslesszui-hou-de-gong-ye-zhi-chuan-greatergreater/</id>
+        <link href="http://localhost:4000/post/wan-mei-shi-jie-wen-chuang-da-sai-u3d-you-xi-chang-jing-lesslesszui-hou-de-gong-ye-zhi-chuan-greatergreater/">
+        </link>
+        <updated>2022-03-01T07:22:00.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<pre><code>   本作品参加了2021年完美世界文创校园设计大赛 功能游戏赛道并荣获一等奖。
+</code></pre>
+</blockquote>
+<h2 id="比赛要求-与-作品介绍">🍀 <em><strong>比赛要求 与 作品介绍</strong></em></h2>
+<h3 id="功能游戏赛道-介绍">🌏 <strong>功能游戏赛道 介绍</strong></h3>
+<p>如何通过传播碳排放、碳中和的概念、结合节能减排或者减少碳排放的手段（企业或个人）实现绿色地球？<br>
+请根据上述内容，以“绿色地球”为题，展开数娱作品创作。</p>
+<h3 id="作品介绍">🚢 <strong>作品介绍</strong></h3>
+<p>本作品结合了“碳排放产生的途径”“进还是退，减少碳排打造绿色星球的第一步”的知识与观念，展现了一个平行世界中众多环保主义者在倡议无果的失望后为脱离工业化的人类社会、寻找一片净土以回归田园生活所乘坐、但最终却于物质、地理层面的绝路中废弃的巨船上的 <strong>3D游戏场景</strong> 。<br>
+使用Blender建模，尝试使用模块化的方式创建了重复使用的地板与墙面；使用SD制作平铺贴图、SP烘焙、制作需要高模细节的贴图；使用Unity的默认渲染管线与PBR材质。</p>
+<h2 id="场景展示">🚢 <em><strong>场景展示</strong></em></h2>
+<p><img src="http://localhost:4000/post-images/1646120591879.jpg" alt="" loading="lazy"><br>
+<img src="http://localhost:4000/post-images/1646120602266.jpg" alt="" loading="lazy"><br>
+<img src="http://localhost:4000/post-images/1646120607597.jpg" alt="" loading="lazy"><br>
+<img src="http://localhost:4000/post-images/1646120613551.jpg" alt="" loading="lazy"><br>
+<img src="http://localhost:4000/post-images/1646120619070.png" alt="" loading="lazy"></p>
+<h2 id="贴图展示">🚢 <em><strong>贴图展示</strong></em></h2>
+<p><img src="http://localhost:4000/post-images/1646120641496.png" alt="" loading="lazy"><br>
+<img src="http://localhost:4000/post-images/1646120645521.png" alt="" loading="lazy"><br>
+<img src="http://localhost:4000/post-images/1646120649003.png" alt="" loading="lazy"></p>
+<h2 id="草图展示">🚢 <em><strong>草图展示</strong></em></h2>
+<p><img src="http://localhost:4000/post-images/1646120665876.png" alt="" loading="lazy"><br>
+<img src="http://localhost:4000/post-images/1646120669878.png" alt="" loading="lazy"></p>
+<h2 id="相关链接">🌄 <strong>相关链接</strong></h2>
+<p><strong>获奖名单</strong> ：<br>
+<a href="https://www.wanmei.com/hd/2108/net/wenchuang/prize3.html#pranav">https://www.wanmei.com/hd/2108/net/wenchuang/prize3.html#pranav</a><br>
+<strong>本作品页面（包括介绍、图片与视频）</strong> ：<br>
+<a href="https://www.wanmei.com/hd/2108/net/wenchuang/detail.html?wid=1039">https://www.wanmei.com/hd/2108/net/wenchuang/detail.html?wid=1039</a><br>
+<strong>视频展示</strong> ：<br>
+<a href="https://www.bilibili.com/video/BV1pF411Y7cc?share_source=copy_web">https://www.bilibili.com/video/BV1pF411Y7cc?share_source=copy_web</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Unity Shader 结课作业 —— 太遠]]></title>
         <id>http://localhost:4000/post/unity-shader-finalhomework/</id>
