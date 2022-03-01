@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://localhost:4000</id>
+    <id>https://KyaraTyphoon.github.io</id>
     <title>指定龙场</title>
-    <updated>2022-03-01T07:58:23.693Z</updated>
+    <updated>2022-03-01T08:13:49.233Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="http://localhost:4000"/>
-    <link rel="self" href="http://localhost:4000/atom.xml"/>
+    <link rel="alternate" href="https://KyaraTyphoon.github.io"/>
+    <link rel="self" href="https://KyaraTyphoon.github.io/atom.xml"/>
     <subtitle>摆放一些屑</subtitle>
-    <logo>http://localhost:4000/images/avatar.png</logo>
-    <icon>http://localhost:4000/favicon.ico</icon>
+    <logo>https://KyaraTyphoon.github.io/images/avatar.png</logo>
+    <icon>https://KyaraTyphoon.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, 指定龙场</rights>
     <entry>
         <title type="html"><![CDATA[【完美世界文創大賽】U3D游戲場景《“最後”的工業之船》]]></title>
-        <id>http://localhost:4000/post/wan-mei-shi-jie-wen-chuang-da-sai-u3d-you-xi-chang-jing-lesslesszui-hou-de-gong-ye-zhi-chuan-greatergreater/</id>
-        <link href="http://localhost:4000/post/wan-mei-shi-jie-wen-chuang-da-sai-u3d-you-xi-chang-jing-lesslesszui-hou-de-gong-ye-zhi-chuan-greatergreater/">
+        <id>https://KyaraTyphoon.github.io/post/wan-mei-shi-jie-wen-chuang-da-sai-u3d-you-xi-chang-jing-lesslesszui-hou-de-gong-ye-zhi-chuan-greatergreater/</id>
+        <link href="https://KyaraTyphoon.github.io/post/wan-mei-shi-jie-wen-chuang-da-sai-u3d-you-xi-chang-jing-lesslesszui-hou-de-gong-ye-zhi-chuan-greatergreater/">
         </link>
         <updated>2022-03-01T07:22:00.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
@@ -28,21 +28,21 @@
 <p>本作品结合了“碳排放产生的途径”“进还是退，减少碳排打造绿色星球的第一步”的知识与观念，展现了一个平行世界中众多环保主义者在倡议无果的失望后为脱离工业化的人类社会、寻找一片净土以回归田园生活所乘坐、但最终却于物质、地理层面的绝路中废弃的巨船上的 <strong>3D游戏场景</strong> 。<br>
 使用Blender建模，尝试使用模块化的方式创建了重复使用的地板与墙面；使用SD制作平铺贴图、SP烘焙、制作需要高模细节的贴图；使用Unity的默认渲染管线与PBR材质。</p>
 <h2 id="场景展示">🚢 <em><strong>场景展示</strong></em></h2>
-<p><img src="http://localhost:4000/post-images/1646120591879.jpg" alt="" loading="lazy"><br>
-<img src="http://localhost:4000/post-images/1646120602266.jpg" alt="" loading="lazy"><br>
-<img src="http://localhost:4000/post-images/1646120607597.jpg" alt="" loading="lazy"><br>
-<img src="http://localhost:4000/post-images/1646120613551.jpg" alt="" loading="lazy"><br>
-<img src="http://localhost:4000/post-images/1646120619070.png" alt="" loading="lazy"></p>
+<p><img src="https://KyaraTyphoon.github.io/post-images/1646120591879.jpg" alt="" loading="lazy"><br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646120602266.jpg" alt="" loading="lazy"><br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646120607597.jpg" alt="" loading="lazy"><br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646120613551.jpg" alt="" loading="lazy"><br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646120619070.png" alt="" loading="lazy"></p>
 <h2 id="贴图展示">🚢 <em><strong>贴图展示</strong></em></h2>
-<p><img src="http://localhost:4000/post-images/1646120641496.png" alt="" loading="lazy"><br>
-<img src="http://localhost:4000/post-images/1646120645521.png" alt="" loading="lazy"><br>
-<img src="http://localhost:4000/post-images/1646120649003.png" alt="" loading="lazy"><br>
-<img src="http://localhost:4000/post-images/1646121206572.png" alt="" loading="lazy"><br>
-<img src="http://localhost:4000/post-images/1646121334779.png" alt="" loading="lazy"></p>
+<p><img src="https://KyaraTyphoon.github.io/post-images/1646120641496.png" alt="" loading="lazy"><br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646120645521.png" alt="" loading="lazy"><br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646120649003.png" alt="" loading="lazy"><br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646121206572.png" alt="" loading="lazy"><br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646121334779.png" alt="" loading="lazy"></p>
 <h2 id="草图展示">🚢 <em><strong>草图展示</strong></em></h2>
-<p><img src="http://localhost:4000/post-images/1646120665876.png" alt="" loading="lazy"><br>
-<img src="http://localhost:4000/post-images/1646120669878.png" alt="" loading="lazy"><br>
-<img src="http://localhost:4000/post-images/1646121199356.png" alt="" loading="lazy"></p>
+<p><img src="https://KyaraTyphoon.github.io/post-images/1646120665876.png" alt="" loading="lazy"><br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646120669878.png" alt="" loading="lazy"><br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646121199356.png" alt="" loading="lazy"></p>
 <h2 id="相关链接">🌄 <strong>相关链接</strong></h2>
 <p><strong>获奖名单</strong> ：<br>
 <a href="https://www.wanmei.com/hd/2108/net/wenchuang/prize3.html#pranav">https://www.wanmei.com/hd/2108/net/wenchuang/prize3.html#pranav</a><br>
@@ -56,8 +56,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Unity Shader 结课作业 —— 太遠]]></title>
-        <id>http://localhost:4000/post/unity-shader-finalhomework/</id>
-        <link href="http://localhost:4000/post/unity-shader-finalhomework/">
+        <id>https://KyaraTyphoon.github.io/post/unity-shader-finalhomework/</id>
+        <link href="https://KyaraTyphoon.github.io/post/unity-shader-finalhomework/">
         </link>
         <updated>2022-03-01T04:17:08.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
@@ -74,59 +74,59 @@
 <p>2️⃣有山有水有角色，有静有动有交互，有顶点有片元有着色器，有抓屏或后处理。</p>
 <h2 id="效果展示">💜 <em><strong>效果展示</strong></em></h2>
 <p><a href="https://www.bilibili.com/video/BV1a341187fx?share_source=copy_web">效果展示 bilibili视频 点我点我</a></p>
-<p><img src="http://localhost:4000/post-images/1646110505081.gif" alt="" loading="lazy"><br>
-<img src="http://localhost:4000/post-images/1646110516077.gif" alt="" loading="lazy"><br>
-<img src="http://localhost:4000/post-images/1646110520741.gif" alt="" loading="lazy"><br>
-<img src="http://localhost:4000/post-images/1646109802212.gif" alt="" loading="lazy"><br>
-<img src="http://localhost:4000/post-images/1646110980039.png" alt="" loading="lazy"><br>
-<img src="http://localhost:4000/post-images/1646111630218.gif" alt="" loading="lazy"></p>
+<p><img src="https://KyaraTyphoon.github.io/post-images/1646110505081.gif" alt="" loading="lazy"><br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646110516077.gif" alt="" loading="lazy"><br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646110520741.gif" alt="" loading="lazy"><br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646109802212.gif" alt="" loading="lazy"><br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646110980039.png" alt="" loading="lazy"><br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646111630218.gif" alt="" loading="lazy"></p>
 <h2 id="shader-graph-展示">💔 <em><strong>Shader Graph 展示</strong></em></h2>
 <h3 id="️-云山">☁️ <strong>云山</strong></h3>
 <p>云山——动 + 山 + 顶点变换 + 与移动的Gameobject、UI 滑动条的交互</p>
 <h4 id="1️⃣子着色器"><strong>1️⃣子着色器</strong></h4>
 <p>动的子着色器！通过时间与UV采样的偏移实现动态的效果。<br>
 暴露的scale和速度可以加以控制。<br>
-<img src="http://localhost:4000/post-images/1646110988814.png" alt="" loading="lazy"></p>
+<img src="https://KyaraTyphoon.github.io/post-images/1646110988814.png" alt="" loading="lazy"></p>
 <h4 id="2️⃣扰动"><strong>2️⃣扰动</strong></h4>
 <p>红框为扰动用噪点，连上了实现动态的子着色器，以扰动基本色、第一层高度图。<br>
 绿框是第二层噪点，调整到合适的范围后与第一层噪点相加，两层移动的速度不同，可以做出云层流动的生动效果。<br>
-<img src="http://localhost:4000/post-images/1646111456375.png" alt="" loading="lazy"></p>
+<img src="https://KyaraTyphoon.github.io/post-images/1646111456375.png" alt="" loading="lazy"></p>
 <h4 id="3️⃣鸟笼位置交互"><strong>3️⃣鸟笼位置交互</strong></h4>
 <p>计算鸟笼位置与当前顶点的距离，用smoothstep取到一个顺滑的值，靠近鸟笼位置的会较低。半径值暴露出可在互动界面的UI Slider 调试。<br>
-<img src="http://localhost:4000/post-images/1646111755576.png" alt="" loading="lazy"></p>
+<img src="https://KyaraTyphoon.github.io/post-images/1646111755576.png" alt="" loading="lazy"></p>
 <h4 id="4️⃣收尾"><strong>4️⃣收尾</strong></h4>
 <p>与法线方向相乘后连上vertex position，完成。<br>
-<img src="http://localhost:4000/post-images/1646111821951.png" alt="" loading="lazy"></p>
+<img src="https://KyaraTyphoon.github.io/post-images/1646111821951.png" alt="" loading="lazy"></p>
 <h3 id="流水">🐋 <strong>流水</strong></h3>
 <p>潭水、湖水与流水——水，抓屏，动态</p>
 <h4 id="0️⃣建模流程注意"><strong>0️⃣建模流程注意</strong></h4>
 <p>水流的UV需要连续拼排为方形，注意方向，以保证UV的流动正确。<br>
-<img src="http://localhost:4000/post-images/1646111976145.png" alt="" loading="lazy"></p>
+<img src="https://KyaraTyphoon.github.io/post-images/1646111976145.png" alt="" loading="lazy"></p>
 <h4 id="1️⃣水流方向"><strong>1️⃣水流方向</strong></h4>
 <p>Y受影响，向下流淌（押韵<br>
-<img src="http://localhost:4000/post-images/1646112190804.png" alt="" loading="lazy"></p>
+<img src="https://KyaraTyphoon.github.io/post-images/1646112190804.png" alt="" loading="lazy"></p>
 <h4 id="2️⃣扰动与折射"><strong>2️⃣扰动与折射</strong></h4>
 <p>由动态的扰动贴图计算为法线贴图，与屏幕位置相计算再和抓屏的采样得到折射后的面貌。<br>
-<img src="http://localhost:4000/post-images/1646112242831.png" alt="" loading="lazy"></p>
+<img src="https://KyaraTyphoon.github.io/post-images/1646112242831.png" alt="" loading="lazy"></p>
 <h4 id="3️⃣深度图子着色器"><strong>3️⃣深度图子着色器</strong></h4>
-<figure data-type="image" tabindex="1"><img src="http://localhost:4000/post-images/1646112297632.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://KyaraTyphoon.github.io/post-images/1646112297632.png" alt="" loading="lazy"></figure>
 <h4 id="4️⃣颜色"><strong>4️⃣颜色</strong></h4>
 <p>由深度插值基本颜色。<br>
-<img src="http://localhost:4000/post-images/1646112361593.png" alt="" loading="lazy"></p>
+<img src="https://KyaraTyphoon.github.io/post-images/1646112361593.png" alt="" loading="lazy"></p>
 <h4 id="5️⃣透明度与浪花"><strong>5️⃣透明度与浪花</strong></h4>
 <p>基本色的透明度与抓屏折射后的颜色插值，再计算浪花。<br>
-<img src="http://localhost:4000/post-images/1646112404687.png" alt="" loading="lazy"></p>
+<img src="https://KyaraTyphoon.github.io/post-images/1646112404687.png" alt="" loading="lazy"></p>
 <h4 id="6️⃣浪花范围"><strong>6️⃣浪花范围</strong></h4>
 <p>深度图计算浪花范围。<br>
-<img src="http://localhost:4000/post-images/1646112439986.png" alt="" loading="lazy"></p>
+<img src="https://KyaraTyphoon.github.io/post-images/1646112439986.png" alt="" loading="lazy"></p>
 <h3 id="蜜汁丝绸">🕸 <em><strong>蜜汁丝绸</strong></em></h3>
-<figure data-type="image" tabindex="2"><img src="http://localhost:4000/post-images/1646112485741.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://KyaraTyphoon.github.io/post-images/1646112485741.png" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Space Terminal 星际航站]]></title>
-        <id>http://localhost:4000/post/space-terminal/</id>
-        <link href="http://localhost:4000/post/space-terminal/">
+        <id>https://KyaraTyphoon.github.io/post/space-terminal/</id>
+        <link href="https://KyaraTyphoon.github.io/post/space-terminal/">
         </link>
         <updated>2022-03-01T03:51:58.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
@@ -144,24 +144,24 @@
 <p>最初在朋友的指导和建议下，绘制了场景草图，之后使用 <em><strong>Blender</strong></em> 建模， <em><strong>Substance Designer</strong></em> 和 <em><strong>Substance Painter</strong></em> 制作贴图，最终在 <em><strong>Unity</strong></em> 里使用PBR材质。<br>
 由于时间安排不恰当，最后场景渲染以及装饰物的制作就没什么时间了。</p>
 <h2 id="引擎内渲染图展示">🚀  <em><strong>引擎内渲染图展示</strong></em></h2>
-<figure data-type="image" tabindex="1"><img src="http://localhost:4000/post-images/1646106969340.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="2"><img src="http://localhost:4000/post-images/1646106975550.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="3"><img src="http://localhost:4000/post-images/1646106985801.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="4"><img src="http://localhost:4000/post-images/1646106991492.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="5"><img src="http://localhost:4000/post-images/1646106997072.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://KyaraTyphoon.github.io/post-images/1646106969340.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://KyaraTyphoon.github.io/post-images/1646106975550.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://KyaraTyphoon.github.io/post-images/1646106985801.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://KyaraTyphoon.github.io/post-images/1646106991492.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://KyaraTyphoon.github.io/post-images/1646106997072.png" alt="" loading="lazy"></figure>
 <h2 id="材质贴图展示">🏓 <em><strong>材质贴图展示</strong></em></h2>
-<figure data-type="image" tabindex="6"><img src="http://localhost:4000/post-images/1646107022246.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="7"><img src="http://localhost:4000/post-images/1646107029375.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="8"><img src="http://localhost:4000/post-images/1646107034224.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="9"><img src="http://localhost:4000/post-images/1646107039760.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="6"><img src="https://KyaraTyphoon.github.io/post-images/1646107022246.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="7"><img src="https://KyaraTyphoon.github.io/post-images/1646107029375.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="8"><img src="https://KyaraTyphoon.github.io/post-images/1646107034224.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="9"><img src="https://KyaraTyphoon.github.io/post-images/1646107039760.png" alt="" loading="lazy"></figure>
 <h2 id="概念草图展示">🎾  <em><strong>概念草图展示</strong></em></h2>
-<figure data-type="image" tabindex="10"><img src="http://localhost:4000/post-images/1646107053165.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="10"><img src="https://KyaraTyphoon.github.io/post-images/1646107053165.png" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[关于]]></title>
-        <id>http://localhost:4000/post/about/</id>
-        <link href="http://localhost:4000/post/about/">
+        <id>https://KyaraTyphoon.github.io/post/about/</id>
+        <link href="https://KyaraTyphoon.github.io/post/about/">
         </link>
         <updated>2022-02-28T16:58:50.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
