@@ -1,110 +1,112 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" >
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
 <title>Unity Shader 结课作业 —— 太遠 | 指定龙场</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=1646118086857">
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=1646117853538">
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="http://localhost:4000/styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
 
 
 
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-
-
-    <meta name="description" content="
-  标题用繁体，是因为感觉简体的“太远”不够意思，所以用繁体。
-  本作业提交时间：2021年11月16日
-
-
-😖 简要介绍
-blender建模，人头改模自扫描雕塑、手来自扫描雕塑。拓扑是本人人工拓扑。其余都是自己做的。
-场景由 鸟笼、..." />
-    <meta name="keywords" content="Unity,Blender" />
-  </head>
-  <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="http://localhost:4000">
-        <img src="http://localhost:4000/images/avatar.png?v=1646117853538" class="site-logo">
-        <h1 class="site-title">指定龙场</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            指定龙场
+        </div>
     </div>
-    <div>
-      
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="site-nav">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="site-nav">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <div class="site-description">
-      摆放一些屑
-    </div>
-    <div class="site-footer">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="http://localhost:4000/atom.xml" target="_blank">RSS</a>
-    </div>
-  </div>
-</div>
-
-
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">Unity Shader 结课作业 —— 太遠</h2>
-            <div class="post-date">2022-03-01</div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
             
-              <div class="feature-container" style="background-image: url('http://localhost:4000/post-images/unity-shader-finalhomework.png')">
-              </div>
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
             
-            <div class="post-content" v-pre>
-              <blockquote>
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/post/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1646118086857" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    Unity Shader 结课作业 —— 太遠
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2022-03-01 ·
+                    </time>
+                    
+                        <a href="http://localhost:4000/tag/0esk4CiCO/" class="post-tags">
+                            # Unity
+                        </a>
+                    
+                        <a href="http://localhost:4000/tag/06DEpXpla/" class="post-tags">
+                            # Blender
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <blockquote>
 <pre><code>  标题用繁体，是因为感觉简体的“太远”不够意思，所以用繁体。
   本作业提交时间：2021年11月16日
 </code></pre>
@@ -166,57 +168,56 @@ blender建模，人头改模自扫描雕塑、手来自扫描雕塑。拓扑是�
 <h3 id="蜜汁丝绸">🕸 <em><strong>蜜汁丝绸</strong></em></h3>
 <figure data-type="image" tabindex="2"><img src="http://localhost:4000/post-images/1646112485741.png" alt="" loading="lazy"></figure>
 
-            </div>
-            
-              <div class="tag-container">
-                
-                  <a href="http://localhost:4000/tag/0esk4CiCO/" class="tag">
-                    Unity
-                  </a>
-                
-                  <a href="http://localhost:4000/tag/06DEpXpla/" class="tag">
-                    Blender
-                  </a>
-                
-              </div>
-            
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="http://localhost:4000/post/space-terminal/">
-                  <h3 class="post-title">
-                    Space Terminal 星际航站
-                  </h3>
-                </a>
-              </div>
-            
-
-            
-
-          </div>
-
+                </div>
+            </article>
         </div>
-      </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="http://localhost:4000/post/space-terminal/" class="post-title gt-a-link">
+                    Space Terminal 星际航站
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">摆放一些屑</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
     </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="http://localhost:4000/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script type="application/javascript">
-
-AOS.init();
-
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
-
+<script>
+  hljs.initHighlightingOnLoad()
 </script>
 
-
-
-
-
-
-  </body>
+    </div>
+</div>
+</body>
 </html>
