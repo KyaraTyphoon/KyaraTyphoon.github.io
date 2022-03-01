@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://KyaraTyphoon.github.io</id>
     <title>指定龙场</title>
-    <updated>2022-03-01T10:08:03.589Z</updated>
+    <updated>2022-03-01T10:48:45.079Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://KyaraTyphoon.github.io"/>
     <link rel="self" href="https://KyaraTyphoon.github.io/atom.xml"/>
@@ -10,6 +10,44 @@
     <logo>https://KyaraTyphoon.github.io/images/avatar.png</logo>
     <icon>https://KyaraTyphoon.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, 指定龙场</rights>
+    <entry>
+        <title type="html"><![CDATA[游创联创小记]]></title>
+        <id>https://KyaraTyphoon.github.io/post/GameMaker/</id>
+        <link href="https://KyaraTyphoon.github.io/post/GameMaker/">
+        </link>
+        <updated>2022-03-01T10:13:38.000Z</updated>
+        <content type="html"><![CDATA[<p>记录一些罗罗和我作为程序写代码参与的小作品！<br>
+比较难的部分一般是罗罗在写。印象里我写的比较煎熬的是向死而生的画面后处理效果调用和卡牌游戏的Boss攻击逻辑，明明想起来不是很难的功能却被我弄得一团乱麻。<br>
+谢谢罗罗的大腿！！超级可靠！！<br>
+（完整的团队构成在链接内）</p>
+<h2 id="2021-bigc-48小时开发-获奖作品-向死而生">🐜 <em><strong>2021 BIGC 48小时开发 获奖作品 《向死而生》</strong></em></h2>
+<h3 id="奖项">🔮 <em><strong>奖项</strong></em></h3>
+<p>1️⃣BIGC 最佳新秀奖<br>
+2️⃣BIGC 最佳契题奖<br>
+3️⃣bilibili GameBang 冒险类 人气奖第一名<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646131049486.png" alt="" loading="lazy"></p>
+<h3 id="相关链接">📥 <em><strong>相关链接</strong></em></h3>
+<p>视频<br>
+<a href="https://www.bilibili.com/video/BV1rB4y1N7wD?share_source=copy_web">https://www.bilibili.com/video/BV1rB4y1N7wD?share_source=copy_web</a><br>
+比赛作品介绍与下载<br>
+<a href="https://www.hardfun.cn/44232">https://www.hardfun.cn/44232</a><br>
+bilibili游戏页面<br>
+<a href="https://gmb.biligame.com/game/">https://gmb.biligame.com/game/</a><br>
+<a href="https://www.biligame.com/detail/?id=107629">https://www.biligame.com/detail/?id=107629</a></p>
+<hr>
+<h2 id="21秋游创作品-千年帝国的黄昏">🎤 <em><strong>21秋游创作品 《千年帝国的黄昏》</strong></em></h2>
+<h3 id="相关链接-2">📥 <em><strong>相关链接</strong></em></h3>
+<p><a href="https://www.hardfun.cn/43689">https://www.hardfun.cn/43689</a></p>
+<hr>
+<h2 id="21秋游创作品-流放前的最后一日">🎼 <em><strong>21秋游创作品 《流放前的最后一日》</strong></em></h2>
+<h3 id="相关链接-3">📥 <em><strong>相关链接</strong></em></h3>
+<p><a href="https://www.hardfun.cn/42681">https://www.hardfun.cn/42681</a></p>
+<hr>
+<h2 id="21秋游创作品-灵居">👀 <em><strong>21秋游创作品 《灵居》</strong></em></h2>
+<h3 id="相关链接-4">📥 <em><strong>相关链接</strong></em></h3>
+<p><a href="https://www.hardfun.cn/42252">https://www.hardfun.cn/42252</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[数据可视化作业]]></title>
         <id>https://KyaraTyphoon.github.io/post/Datatata/</id>
