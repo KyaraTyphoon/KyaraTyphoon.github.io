@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Houdini 教程内部分知识点总结 Part 1 | 指定龙场</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://KyaraTyphoon.github.io/favicon.ico?v=1646995553052">
+<link rel="stylesheet" href="https://KyaraTyphoon.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="
+   本文用于记录一些教程内部分知识点、个人总结，免得学半天白学。
+   Part 1 预计记录一些HDA入门。想要学习这些教程的同学看了可以知道教了些啥。
+
+
+
+📦 制作科幻风格板条箱 （Sci Fi Crate）
+
+😘 零、教程概..." />
+    <meta name="keywords" content="知识梳理,Houdini" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://KyaraTyphoon.github.io">
+        <img src="https://KyaraTyphoon.github.io/images/avatar.png?v=1646995553052" class="site-logo">
+        <h1 class="site-title">指定龙场</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/tag/art/" class="site-nav">
+            美术作品
+          </a>
+        
+      
+        
+          <a href="/tag/personal-work-collections/" class="site-nav">
+            个人作品
+          </a>
+        
+      
+        
+          <a href="/tag/Team-creation/" class="site-nav">
+            团队参与
+          </a>
+        
+      
+        
+          <a href="/tag/knowledge/" class="site-nav">
+            知识梳理
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签分类
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            本站与我
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      摆放一些屑
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://KyaraTyphoon.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Houdini 教程内部分知识点总结 Part 1</h2>
+            <div class="post-date">2022-03-11</div>
+            
+              <div class="feature-container" style="background-image: url('https://KyaraTyphoon.github.io/post-images/Houdini-knowledge-summary-part-1.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <blockquote>
+<pre><code>   本文用于记录一些教程内部分知识点、个人总结，免得学半天白学。
+   Part 1 预计记录一些HDA入门。想要学习这些教程的同学看了可以知道教了些啥。
+</code></pre>
+</blockquote>
+<p><ul class="markdownIt-TOC">
+<li><a href="#%E5%88%B6%E4%BD%9C%E7%A7%91%E5%B9%BB%E9%A3%8E%E6%A0%BC%E6%9D%BF%E6%9D%A1%E7%AE%B1-sci-fi-crate">📦 <em><strong>制作科幻风格板条箱 （Sci Fi Crate）</strong></em></a>
+<ul>
+<li><a href="#%E9%9B%B6-%E6%95%99%E7%A8%8B%E6%A6%82%E8%BF%B0">😘 <strong>零、教程概述</strong></a></li>
+<li><a href="#%EF%B8%8F-%E4%B8%80-%E5%BB%BA%E6%A8%A1%E5%A4%A7%E8%87%B4%E6%B5%81%E7%A8%8B">☝️ <strong>一、建模大致流程</strong></a>
+<ul>
+<li><a href="#1-box-%E5%A4%A7%E5%B0%8F%E6%AF%94%E4%BE%8B">1、Box 大小比例</a></li>
+<li><a href="#2-%E5%88%86%E5%89%B2%E4%B8%8A%E4%B8%8B%E4%B8%A4%E9%83%A8%E5%88%86">2、分割上下两部分</a></li>
+<li><a href="#3-%E7%AE%B1%E4%BD%93%E7%9A%84poly-extrude-poly-bevel">3、箱体的Poly Extrude &amp; Poly Bevel</a></li>
+<li><a href="#4-%E7%AE%B1%E4%BD%93%E7%9A%84-boolean-subtract">4、箱体的 Boolean - Subtract</a>
+<ul>
+<li><a href="#1-%E5%89%8D%E5%90%8E%E5%B7%A6%E5%8F%B3%E9%9D%A2">① 前后左右面</a></li>
+<li><a href="#2-%E5%9B%9B%E4%B8%AA%E8%A7%92">② 四个角</a></li>
+<li><a href="#3-merge-%E5%90%8E%E5%80%92%E8%A7%92">③ Merge 后倒角</a></li>
+</ul>
+</li>
+<li><a href="#5-%E7%9B%96%E5%AD%90%E7%9A%84%E5%88%B6%E4%BD%9C">5、盖子的制作</a></li>
+<li><a href="#6-%E9%94%81">6、锁</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%8C-hda-%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE">🤓 <strong>二、HDA 参数设置</strong></a>
+<ul>
+<li><a href="#1-%E7%89%A9%E4%BD%93%E5%88%86%E7%A6%BB">1、物体分离</a></li>
+<li><a href="#2-hda%E4%BD%8D%E7%BD%AE%E8%AE%BE%E7%BD%AE">2、HDA位置设置</a></li>
+<li><a href="#3-%E6%9D%90%E8%B4%A8%E8%AE%BE%E7%BD%AE">3、材质设置</a></li>
+<li><a href="#4-steam-%E7%89%88%E6%9C%AC%E7%9A%84-houdini-engine-%E4%BD%8D%E7%BD%AE">4、Steam 版本的 Houdini Engine 位置</a></li>
+<li><a href="#5-%E7%9B%AE%E5%89%8D%E6%9D%A5%E8%AF%B4%E5%8F%82%E6%95%B0%E5%88%97%E8%A1%A8%E9%95%BF%E8%BF%99%E6%A0%B7">5、目前来说参数列表长这样</a></li>
+<li><a href="#6-hide-when-%E8%AF%AD%E6%B3%95">6、Hide When 语法</a></li>
+<li><a href="#7-%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86-multiparm-block-list-%E7%9A%84%E8%AE%BE%E7%BD%AE%E4%B8%8E%E5%BC%95%E7%94%A8">7、👑 <strong>重点知识</strong> MultiParm Block ( List ) 的设置与引用</a></li>
+<li><a href="#8-group-%E5%B0%8F%E7%BB%86%E8%8A%82">8、Group 小细节</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%89-%E9%AB%98%E6%A8%A1%E4%B8%8E%E8%B4%B4%E5%9B%BE%E7%83%98%E7%84%99">📀 <strong>三、高模与贴图烘焙</strong></a>
+<ul>
+<li><a href="#1-uv%E5%B1%95%E5%BC%80">1、UV展开</a></li>
+<li><a href="#2-%E9%AB%98%E6%A8%A1%E5%88%B6%E4%BD%9C-%E9%87%91%E5%B1%9E%E9%83%A8%E4%BB%B6%E9%A1%B6%E7%82%B9%E8%89%B2">2、高模制作 &amp; 金属部件顶点色</a></li>
+<li><a href="#3-%E8%B4%B4%E5%9B%BE-r-%E9%80%9A%E9%81%93-%E9%87%91%E5%B1%9E%E5%8F%8A%E8%BE%B9%E7%BC%98%E7%A3%A8%E6%8D%9F">3、贴图 R 通道 —— 金属及边缘磨损</a>
+<ul>
+<li><a href="#1-%E6%9B%B2%E7%8E%87%E5%80%BC">① 曲率值</a></li>
+<li><a href="#2-%E5%9D%87%E5%8C%80%E7%A3%A8%E6%8D%9F">② 均匀磨损</a></li>
+<li><a href="#3-%E7%A3%A8%E6%8D%9F%E4%B8%8D%E5%9D%87%E5%8C%80%E5%8C%96">③ 磨损不均匀化</a></li>
+</ul>
+</li>
+<li><a href="#4-%E8%B4%B4%E5%9B%BE-g-%E9%80%9A%E9%81%93-%E6%B1%A1%E6%B8%8D">4、贴图 G 通道 —— 污渍</a></li>
+<li><a href="#5-%E8%B4%B4%E5%9B%BE-b-%E9%80%9A%E9%81%93-y-%E8%BD%B4%E4%BD%8D%E7%BD%AE%E6%B8%90%E5%8F%98%E8%89%B2">5、贴图 B 通道 —— Y 轴位置渐变色</a></li>
+<li><a href="#6-%E6%B7%B7%E5%90%88%E5%9C%A8%E4%B8%80%E8%B5%B7">6、混合在一起🍻</a></li>
+<li><a href="#7-%E7%83%98%E7%84%99">7、烘焙！</a></li>
+</ul>
+</li>
+<li><a href="#%E5%9B%9B-%E8%B4%B4%E8%8A%B1%E5%88%B6%E4%BD%9C"><strong>四、贴花制作</strong></a>
+<ul>
+<li><a href="#1-grid">1、Grid</a></li>
+<li><a href="#2-%E8%B4%B4%E8%8A%B1%E7%9A%84%E4%BD%8D%E7%BD%AE%E4%BB%A5%E5%8F%8A%E7%B1%BB%E5%9E%8B">2、贴花的位置以及类型</a></li>
+<li><a href="#3-%E5%88%9B%E5%BB%BA%E8%B4%B4%E8%8A%B1">3、创建贴花</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%88%B6%E4%BD%9Chda%E9%99%A8%E7%9F%B3">👩‍💻 <em><strong>制作HDA陨石</strong></em></a>
+<ul>
+<li><a href="#%E9%9B%B6-%E8%AF%BE%E7%A8%8B%E7%AE%80%E4%BB%8B"><strong>零、课程简介</strong></a></li>
+<li><a href="#%E4%B8%80-%E6%B5%81%E7%A8%8B"><strong>一、流程</strong></a>
+<ul>
+<li><a href="#1-%E5%A4%A7%E8%87%B4%E6%AD%A5%E9%AA%A4">1、大致步骤</a></li>
+<li><a href="#2-%E7%BB%86%E8%8A%82%E7%9F%A5%E8%AF%86%E7%82%B9">2、细节知识点</a>
+<ul>
+<li><a href="#1-%E5%88%A0%E9%99%A4%E7%A2%8E%E7%89%87">① 删除碎片</a></li>
+<li><a href="#2-%E6%95%B0%E5%AD%97%E8%B5%84%E4%BA%A7%E5%88%B6%E4%BD%9C">② 数字资产制作</a></li>
+<li><a href="#3-%E5%85%B6%E4%BB%96">③ 其他</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+<h1 id="制作科幻风格板条箱-sci-fi-crate">📦 <em><strong>制作科幻风格板条箱 （Sci Fi Crate）</strong></em></h1>
+<figure data-type="image" tabindex="1"><img src="https://KyaraTyphoon.github.io/post-images/1646986593554.png" alt="" loading="lazy"></figure>
+<h2 id="零-教程概述">😘 <strong>零、教程概述</strong></h2>
+<p>本教程涵盖 基础<strong>硬表面建模</strong> 与 基本的胡迪尼<strong>数字资产</strong>（Houdini Digital Asset）及其<strong>贴图烘焙</strong>、<strong>Unity</strong> 材质设置、<strong>贴花制作</strong>的知识。<br>
+😭感谢 Simon 老师发布在官网的本教程！在本教程学了太多东西！</p>
+<p>需要准备的：</p>
+<ol>
+<li>Houdini 18.5（教程原作者是这个版本，我用的19）</li>
+<li>安装好Houdini Engine插件的Unity HDRP项目</li>
+</ol>
+<h2 id="️-一-建模大致流程">☝️ <strong>一、建模大致流程</strong></h2>
+<h3 id="1-box-大小比例">1、Box 大小比例</h3>
+<p>设置一个 Toggle 参数赋值给 Switch ，可以选择由引擎内输入物体，或者手动调整数值控制箱子的大小比例。<br>
+由于引擎内的 Cube 有三角面，非四边面将影响到后续步骤的 poly extrude - inset与布尔操作，因此中间增加一个 Bound 节点直接获取包围盒来避免问题。<br>
+使用match size将锚点放到中心底部。</p>
+<ul>
+<li>需要暴露参数的节点，可以使用颜色标记。<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646984398973.png" alt="" loading="lazy"></li>
+</ul>
+<h3 id="2-分割上下两部分">2、分割上下两部分</h3>
+<p>使用一个 2*2 的Grid根据箱子高度（使用 <code>bbox</code> 函数，填入节点与 <code>D_YSIZE</code> ）按比例切割，使用Bool - Shatter，勾选输出组 A only pieces 分为上下两部分，用 Split 分开。<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646985346073.png" alt="" loading="lazy"></p>
+<h3 id="3-箱体的poly-extrude-poly-bevel">3、箱体的Poly Extrude &amp; Poly Bevel</h3>
+<p>因为会使用到 Group - keep by normal 进行上下两面打组，再让前后左右四个方向的面片分别缩小、实体化、倒角后与箱体布尔，所以箱体整体的倒角顺序不能放到一开始（本笨比一开始没想明白为啥不倒角完了再切割）。<br>
+至于箱子的倒角，先删除对应面后倒角再使用 Poly Fill - Single Polygon 即可。<br>
+挤出箱子内部的两个步骤都要勾选输出挤出的 Edge Group，之后倒角使用。<br>
+挤出完了记得加一个Fuse节点避免保留多余的点。<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646986090449.png" alt="" loading="lazy"></p>
+<h3 id="4-箱体的-boolean-subtract">4、箱体的 Boolean - Subtract</h3>
+<h4 id="1-前后左右面">① 前后左右面</h4>
+<ul>
+<li>Divide into - Individual Elements</li>
+<li>不勾选输出Side</li>
+<li>不在 inset 设置数值，而是 ↓<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646986454084.png" alt="" loading="lazy"><br>
+之后使用Labs - Thicken 节点，勾选Both Directions，挤出即可。<br>
+如果想在底部也加一个一样效果的，同样步骤操作即可。</li>
+</ul>
+<h4 id="2-四个角">② 四个角</h4>
+<ul>
+<li>底部面 Poly Frame 将切线方向 First Edge 作为 N，如此一来将 Box 沿 Y 轴旋转45度后的 Boolean 就能得到规整均匀的斜切效果。</li>
+<li>Box Copy To Points</li>
+<li>设置高低位置、大小（可以暴露为参数）<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646987085286.png" alt="" loading="lazy"></li>
+<li>还可以利用箱体缩小之后再次与 Box 进行Boolean - intersect ，得到金属包边。</li>
+</ul>
+<h4 id="3-merge-后倒角">③ Merge 后倒角</h4>
+<p>倒角完直接布尔就OK哩。<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646987352061.png" alt="" loading="lazy"></p>
+<h3 id="5-盖子的制作">5、盖子的制作</h3>
+<p>盖子的操作几乎就是把前面箱子的复制粘贴一遍，删掉四个角简单修改。<br>
+比较不重复的就是使用Divide 节点制作三角形面片挤出后布尔得到一个金属装饰。<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646987574850.png" alt="" loading="lazy"></p>
+<h3 id="6-锁">6、锁</h3>
+<p>教程里直接引用了一个做好的锁，这个锁是金属质感、可以分别附在箱盖、箱体的。<br>
+分离后直接给箱体一个Bound节点沿 X 轴方向缩小留下朝上面 Copy to points 得到四个锁。</p>
+<h2 id="二-hda-参数设置">🤓 <strong>二、HDA 参数设置</strong></h2>
+<h3 id="1-物体分离">1、物体分离</h3>
+<p>盖子和箱体分别<strong>打组</strong>或<strong>给属性</strong>，删除后分离即可。在另一个 geometry 节点中使用 Object Merge 节点引用得到盖子，记得要输入<strong>相对位置</strong>，不然Unity里会丢失。<br>
+盖子的锚点需要在合适的位置，方便我们在 Unity 里摆出不同的合理造型。</p>
+<h3 id="2-hda位置设置">2、HDA位置设置</h3>
+<p>把箱子和盖子两个节点选中后 Shift + C 打包，右键创建 HDA ，直接将存储位置设置到 Unity 的 Assets 文件内，这样每次更新文件后在 Unity 内 Rebuild 即可。<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646989009098.png" alt="" loading="lazy"></p>
+<h3 id="3-材质设置">3、材质设置</h3>
+<p>给材质的话可以将材质位置暴露为参数，可在 Unity 内右键材质后 Copy Path 。<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646988955402.png" alt="" loading="lazy"></p>
+<h3 id="4-steam-版本的-houdini-engine-位置">4、Steam 版本的 Houdini Engine 位置</h3>
+<figure data-type="image" tabindex="2"><img src="https://KyaraTyphoon.github.io/post-images/1646988354678.png" alt="" loading="lazy"></figure>
+<h3 id="5-目前来说参数列表长这样">5、目前来说参数列表长这样</h3>
+<p><img src="https://KyaraTyphoon.github.io/post-images/1646988392352.png" alt="" loading="lazy"><br>
+参数要都设置好默认值和范围。一些值特别小的，可以设置一个浮点数类型的参数直接与其相乘。</p>
+<h3 id="6-hide-when-语法">6、Hide When 语法</h3>
+<p><code>{ name == 1 }</code><br>
+记得打空格不然识别不出来嗷。（下图非 Sci Fi Crate 教程）<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646988602570.gif" alt="" loading="lazy"></p>
+<h3 id="7-重点知识-multiparm-block-list-的设置与引用">7、👑 <strong>重点知识</strong> MultiParm Block ( List ) 的设置与引用</h3>
+<ol>
+<li>新建文件夹 Boolean Count 类型设置为 MultiParm Block ( List )</li>
+<li>回到前面的布尔步骤，给一个 For-Each Numer ，次数赋值为 Boolean Count<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646989354278.png" alt="" loading="lazy"></li>
+<li>文件夹内新建一个 Odered Menu 参数，我们靠它指定（Switch节点）此次布尔的类型。（配图仅演示功能）<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646989590557.png" alt="" loading="lazy"></li>
+<li>因为有 For-Each Numer 了，前面的布尔的Merge不要了。<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646990313196.png" alt="" loading="lazy"></li>
+<li>For-Each Number 中的参数引用：<br>
+前面在 MultiParm Block 类型文件夹内，我们能注意到每次 Apply 参数后都会给参数名加一个井号后缀。井号后就是迭代次数，因此我们使用以下公式为节点赋值参数。<br>
+<code>ch( strcat(&quot; ../.I/B1_.&quot; , detail(&quot;../foreach_count1&quot;,&quot;iteration&quot; , 0) + 1）)</code><br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646990605955.png" alt="" loading="lazy"></li>
+</ol>
+<h3 id="8-group-小细节">8、Group 小细节</h3>
+<p>表达式不要乱加空格。</p>
+<h2 id="三-高模与贴图烘焙">📀 <strong>三、高模与贴图烘焙</strong></h2>
+<h3 id="1-uv展开">1、UV展开</h3>
+<p>使用 Labs 的 Auto UV - UV Unwrap 展开UV，由于生成UV会影响调整外形时的速度，因此添加一个生成UV的开关。<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646991204053.png" alt="" loading="lazy"><br>
+Soften Normals 的两个参数可以都暴露出。</p>
+<h3 id="2-高模制作-金属部件顶点色">2、高模制作 &amp; 金属部件顶点色</h3>
+<figure data-type="image" tabindex="3"><img src="https://KyaraTyphoon.github.io/post-images/1646991769191.png" alt="" loading="lazy"></figure>
+<h3 id="3-贴图-r-通道-金属及边缘磨损">3、贴图 R 通道 —— 金属及边缘磨损</h3>
+<h4 id="1-曲率值">① 曲率值</h4>
+<p>使顶点获取凸出程度值属性。<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646992059344.png" alt="" loading="lazy"><br>
+根据属性上色。<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646992161386.png" alt="" loading="lazy"></p>
+<h4 id="2-均匀磨损">② 均匀磨损</h4>
+<p>让非金属部分得到随机颜色。<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646992289995.png" alt="" loading="lazy"><br>
+让随机颜色变成黑白、高对比的。<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646992392324.png" alt="" loading="lazy"><br>
+Color Blend 节点混合。<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646992499953.png" alt="" loading="lazy"><br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646993605819.png" alt="" loading="lazy"></p>
+<h4 id="3-磨损不均匀化">③ 磨损不均匀化</h4>
+<p>给一个比较大的早点然后 Color Blend - Darken。<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646994148364.gif" alt="" loading="lazy"></p>
+<h3 id="4-贴图-g-通道-污渍">4、贴图 G 通道 —— 污渍</h3>
+<figure data-type="image" tabindex="4"><img src="https://KyaraTyphoon.github.io/post-images/1646994245442.png" alt="" loading="lazy"></figure>
+<h3 id="5-贴图-b-通道-y-轴位置渐变色">5、贴图 B 通道 —— Y 轴位置渐变色</h3>
+<figure data-type="image" tabindex="5"><img src="https://KyaraTyphoon.github.io/post-images/1646994358083.png" alt="" loading="lazy"></figure>
+<h3 id="6-混合在一起">6、混合在一起🍻</h3>
+<figure data-type="image" tabindex="6"><img src="https://KyaraTyphoon.github.io/post-images/1646994453564.png" alt="" loading="lazy"></figure>
+<h3 id="7-烘焙">7、烘焙！</h3>
+<p>记得高模低模都要分离物件再烘焙哦~<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646994612631.png" alt="" loading="lazy"></p>
+<h2 id="四-贴花制作"><strong>四、贴花制作</strong></h2>
+<h3 id="1-grid">1、Grid</h3>
+<p>创建、投影、给材质，然后按照贴花的布局将部分边 Dissolve 掉。<br>
+给每个 Prim 属性。<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646995033296.png" alt="" loading="lazy"></p>
+<h3 id="2-贴花的位置以及类型">2、贴花的位置以及类型</h3>
+<p>在箱子上提取点作为贴花的位置，给予他们属性 scale，和对应的 decal_index。<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646995307397.png" alt="" loading="lazy"><br>
+将这些点 Merge 之后，统一创建  <code>SurfaceOffset</code> 属性避免贴花过于紧贴模型。</p>
+<h3 id="3-创建贴花">3、创建贴花</h3>
+<figure data-type="image" tabindex="7"><img src="https://KyaraTyphoon.github.io/post-images/1646995442648.png" alt="" loading="lazy"></figure>
+<hr>
+<h1 id="制作hda陨石">👩‍💻 <em><strong>制作HDA陨石</strong></em></h1>
+<figure data-type="image" tabindex="8"><img src="https://KyaraTyphoon.github.io/post-images/1646979665856.png" alt="" loading="lazy"></figure>
+<h2 id="零-课程简介"><strong>零、课程简介</strong></h2>
+<ul>
+<li>教程版本：H17.5</li>
+<li>主要内容：
+<ul>
+<li>教程前半部分建模流程较简单，使用布尔与Mountain随机化、体素制作高模，InsMesh与Polyreduce、SimpleBaker制作低模，可学到一些参数化流程。</li>
+<li>教程后半部分的内容是如何使用Mantra渲染，可参考其中的使用烘焙曲率贴图作为遮罩的思路为陨石在Unity内制作着色器。</li>
+</ul>
+</li>
+</ul>
+<h2 id="一-流程"><strong>一、流程</strong></h2>
+<h3 id="1-大致步骤">1、大致步骤</h3>
+<figure data-type="image" tabindex="9"><img src="https://KyaraTyphoon.github.io/post-images/1646980188832.png" alt="" loading="lazy"></figure>
+<h3 id="2-细节知识点">2、细节知识点</h3>
+<h4 id="1-删除碎片">① 删除碎片</h4>
+<p>由于进行了三步布尔，可能导致陨石有被切割浮空的碎片。为此我们需要将这些碎片删除。<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646980254557.png" alt="" loading="lazy"></p>
+<h4 id="2-数字资产制作">② 数字资产制作</h4>
+<p>主要是一开始录入参数的时候就要<strong>设置好默认值</strong>。<br>
+<strong>注意需要在这里设置参数，而不是参数面板的小齿轮。</strong><br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646980649396.png" alt="" loading="lazy"><br>
+更新参数设置之后：<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1646980664567.png" alt="" loading="lazy"></p>
+<h4 id="3-其他">③ 其他</h4>
+<ul>
+<li>如果在Houdini内渲染，材质的Bind注意类型设置（小细节卡我好久）。</li>
+<li>按钮也可以拖进参数列表。</li>
+<li>烘焙的各个参数以及输出地址都要作为暴露的参数，方便操作。</li>
+</ul>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://KyaraTyphoon.github.io/tag/knowledge/" class="tag">
+                    知识梳理
+                  </a>
+                
+                  <a href="https://KyaraTyphoon.github.io/tag/Houdini/" class="tag">
+                    Houdini
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://KyaraTyphoon.github.io/post/space-terminal/">
+                  <h3 class="post-title">
+                    3D场景——Space Terminal 星际航站
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
