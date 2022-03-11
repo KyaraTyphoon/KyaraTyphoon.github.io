@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://KyaraTyphoon.github.io</id>
     <title>指定龙场</title>
-    <updated>2022-03-11T16:42:44.268Z</updated>
+    <updated>2022-03-11T16:59:55.091Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://KyaraTyphoon.github.io"/>
     <link rel="self" href="https://KyaraTyphoon.github.io/atom.xml"/>
@@ -10,6 +10,15 @@
     <logo>https://KyaraTyphoon.github.io/images/avatar.png</logo>
     <icon>https://KyaraTyphoon.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, 指定龙场</rights>
+    <entry>
+        <title type="html"><![CDATA[test]]></title>
+        <id>https://KyaraTyphoon.github.io/post/test/</id>
+        <link href="https://KyaraTyphoon.github.io/post/test/">
+        </link>
+        <updated>2022-03-11T16:59:33.000Z</updated>
+        <content type="html"><![CDATA[<p>zaa</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Houdini 教程内部分知识点总结 Part 1]]></title>
         <id>https://KyaraTyphoon.github.io/post/Houdini-knowledge-summary-part-1/</id>
@@ -436,25 +445,6 @@ bilibili游戏页面<br>
 <h1 id="21秋游创作品-灵居">👀 <em><strong>21秋游创作品 《灵居》</strong></em></h1>
 <h2 id="相关链接-4">📥 <em><strong>相关链接</strong></em></h2>
 <p><a href="https://www.hardfun.cn/42252">https://www.hardfun.cn/42252</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[关于]]></title>
-        <id>https://KyaraTyphoon.github.io/post/about/</id>
-        <link href="https://KyaraTyphoon.github.io/post/about/">
-        </link>
-        <updated>2021-09-30T16:58:50.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>晚上好。</p>
-</blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<p>用来放作品集的，比较匆忙，这一页也是模板。</p>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<p>中传动画学院数字媒体技术（游戏设计技术）23届一个微不足道的大学生。</p>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<p>好想玩戴森球。</p>
-<h2 id="联系我呀">📬 联系我呀</h2>
-<p>QQ：1666265502</p>
 ]]></content>
     </entry>
 </feed>
