@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://KyaraTyphoon.github.io</id>
     <title>指定龙场</title>
-    <updated>2022-03-12T02:18:08.336Z</updated>
+    <updated>2022-03-12T02:35:54.846Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://KyaraTyphoon.github.io"/>
     <link rel="self" href="https://KyaraTyphoon.github.io/atom.xml"/>
@@ -401,11 +401,30 @@ Color Blend 节点混合。<br>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[联合创作&游戏创作——小记]]></title>
-        <id>https://KyaraTyphoon.github.io/post/GameMaker/</id>
-        <link href="https://KyaraTyphoon.github.io/post/GameMaker/">
+        <title type="html"><![CDATA[关于]]></title>
+        <id>https://KyaraTyphoon.github.io/post/about/</id>
+        <link href="https://KyaraTyphoon.github.io/post/about/">
         </link>
-        <updated>2021-10-01T10:13:38.000Z</updated>
+        <updated>2021-09-30T16:58:50.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>晚上好。</p>
+</blockquote>
+<h2 id="关于本站">🏠 关于本站</h2>
+<p>用来放作品集的，比较匆忙，这一页也是模板。</p>
+<h2 id="博主是谁">👨‍💻 博主是谁</h2>
+<p>中传动画学院数字媒体技术（游戏设计技术）23届一个微不足道的大学生。</p>
+<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
+<p>好想玩戴森球。</p>
+<h2 id="联系我呀">📬 联系我呀</h2>
+<p>QQ：1666265502</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[游戏创作 & 联合创作 —— 小记录]]></title>
+        <id>https://KyaraTyphoon.github.io/post/GameMakers/</id>
+        <link href="https://KyaraTyphoon.github.io/post/GameMakers/">
+        </link>
+        <updated>2021-09-30T02:33:38.000Z</updated>
         <content type="html"><![CDATA[<p>记录一些罗罗和我作为程序写代码参与的小作品！<br>
 比较难的部分一般是罗罗在写。印象里我写的比较煎熬的是向死而生的画面后处理效果调用和卡牌游戏的Boss攻击逻辑，明明想起来不是很难的功能却被我弄得一团乱麻。<br>
 谢谢罗罗的大腿！！超级可靠！！<br>
@@ -436,25 +455,6 @@ bilibili游戏页面<br>
 <h1 id="21秋游创作品-灵居">👀 <em><strong>21秋游创作品 《灵居》</strong></em></h1>
 <h2 id="相关链接-4">📥 <em><strong>相关链接</strong></em></h2>
 <p><a href="https://www.hardfun.cn/42252">https://www.hardfun.cn/42252</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[关于]]></title>
-        <id>https://KyaraTyphoon.github.io/post/about/</id>
-        <link href="https://KyaraTyphoon.github.io/post/about/">
-        </link>
-        <updated>2021-09-30T16:58:50.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>晚上好。</p>
-</blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<p>用来放作品集的，比较匆忙，这一页也是模板。</p>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<p>中传动画学院数字媒体技术（游戏设计技术）23届一个微不足道的大学生。</p>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<p>好想玩戴森球。</p>
-<h2 id="联系我呀">📬 联系我呀</h2>
-<p>QQ：1666265502</p>
 ]]></content>
     </entry>
 </feed>
