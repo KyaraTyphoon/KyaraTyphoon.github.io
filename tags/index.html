@@ -89,7 +89,7 @@
                         src='https://KyaraTyphoon.github.io/media/images/music.png' alt="音乐播放器" class="musicbtn"></i></a>
         </div>
         <div class="avatar-border">
-            <img src="https://KyaraTyphoon.github.io/images/avatar.png?v=1650734629604" class="avatar">
+            <img src="https://KyaraTyphoon.github.io/images/avatar.png?v=1650734824991" class="avatar">
         </div>
         <div class="sitename">指定龙场</div>
         <span class="description" data-text='["Bunga Bunga！"]'>&nbsp;</span>
@@ -1108,9 +1108,9 @@ menulist.eq(i).show();
                         <div class="mobilebar">
                             <img src="" alt="" class="plbg">
 <script>
-    var bgchoice = "link";
+    var bgchoice = "default";
     if(bgchoice=='default')
-        var plbgurl = ""
+        var plbgurl = "\media\images\custom-mobileplbgimage.jpg"
     else  
         var plbgurl = "https://pic.imgdb.cn/item/62642cf2239250f7c5b8ce6d.jpg"
     $(".plbg").attr("src",plbgurl);
@@ -1125,8 +1125,8 @@ menulist.eq(i).show();
                         </script>
                         <div class="tagsbackgroundleft"></div>
                         
-                            <img class="tagsimg" src="https://pic.imgdb.cn/item/62642caa239250f7c5b80094.jpg" alt="">
-                        
+                            <img class="tagsimg" src="\media\images\custom-tagimage.jpg" alt="">
+                            
                         <div class="tags-container">
                         
                             <a data-pjax class="tag" href="https://KyaraTyphoon.github.io/tag/UnrealEngine/"># UnrealEngine</a>
@@ -1229,10 +1229,10 @@ menulist.eq(i).show();
         <div id="bg">
         </div>
         <!-- 背景图加载方式👇 -->
-        <div id="bgchoice" style="display: none">link
+        <div id="bgchoice" style="display: none">default
                     </div>
                     
-                    <div id="bgurl" style="display:none">https://pic.imgdb.cn/item/62642cdc239250f7c5b88f0b.jpg</div>
+                    <div id="bgurl" style="display:none">\media\images\custom-bgimage.jpg</div>
                        
         </div>
         <!-- 背景图加载方式👆 -->
@@ -1260,7 +1260,7 @@ menulist.eq(i).show();
 
 <!------------ 加载全局背景图功能👇（开始时没有写好，这功能有点鸡肋/(ㄒoㄒ)/~~） -->
 <script>
-    var bgchoice = "link"
+    var bgchoice = "default"
     var bg = $('#bg');
     var bgurl = document.getElementById("bgurl").innerHTML;
     if (bgchoice == 'default')
