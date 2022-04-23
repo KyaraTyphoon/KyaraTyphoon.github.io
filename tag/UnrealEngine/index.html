@@ -1,26 +1,21 @@
 <!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://KyaraTyphoon.github.io/media/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://KyaraTyphoon.github.io/media/css/live2d.css">
-    <link rel="stylesheet" href="https://KyaraTyphoon.github.io/styles/main.css">
-    <script src="https://KyaraTyphoon.github.io/media/js/valine.min.js"></script>
-    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-    <meta name="description" content="Bunga Bunga！" />
-    <meta http-equiv="x-pjax-version" content="v123">
-    <title>指定龙场</title>
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://KyaraTyphoon.github.io/media/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://KyaraTyphoon.github.io/media/css/live2d.css">
+<link rel="stylesheet" href="https://KyaraTyphoon.github.io/styles/main.css">
+<link rel="stylesheet" href="https://KyaraTyphoon.github.io/media/css/font-awesome.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+<title>指定龙场</title>
 
 
 <body>
+
     <div id="content">
         <div class="nav-large">
             <div class="row">
-                <!-- ----------------左侧菜单栏html 👇-------------------------------------->
-                
                 <!--------------- pc端菜单栏👇 ---------------->
                 <div class="side"><head>
     <link rel="stylesheet" href="https://KyaraTyphoon.github.io/media/css/bootstrap.min.css">
@@ -918,17 +913,9 @@ menulist.eq(i).show();
 </script>
 <!----夜间模式👆--></div>
                 <!--------------- pc端菜单栏👆 ---------------->
-                <div id="tab1" class="tab">
-                    <div class="bars">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <div class="close"></div>
-                </div>
-                <div class="col-md-1 col-lg-3"></div>
+
                 <!----------- 移动端导航栏👇 ----------------->
-                <div class="mobilebar"><style>
+                <div class="tbar"> <style>
   .navmobile {
     z-index: 15;
     max-height: 40vh;
@@ -1058,104 +1045,23 @@ menulist.eq(i).show();
         btstate = false;
       }
     }
-  </script> 
+  </script> </div>
                 <!----------- 移动端导航栏👆 ----------------->
-                </div>
-                <div id="main" class="col-xs-12 col-sm-12 col-md-12 col-lg-7">
-                    <!-- 移动端 -->
-                    <div class="mobilebar">
-                        <!-- 移动端欢迎页 -->
-<div class="welcome">
-    <div class="avatar-border">
-        <img src="https://KyaraTyphoon.github.io/images/avatar.png?v=1650732410082" class="avatar">
-    </div>
-    <span class="mobiledescribtion"></span>
-</div>
 
-
-<div id="mobilebgurl" style="display:none">/media/images/mobilebgimg.jpg</div>
-
-<script>
-    var welcome = $('.welcome');
-    var bgurl = document.getElementById("mobilebgurl").innerHTML;
-    for (var i = 0; i < 3; i++)
-        bgurl = bgurl.replace("\\", "/");
-    welcome.css("background", "url('" + bgurl + "')");
-    var mobiledes = document.querySelector(".mobiledescribtion");
-    var text = "Bunga Bunga！";
-    // 当前显示第几个字
-    var mobilecharIndex = 1;
-    // 每个字显示间隔默认是500毫秒
-    var mobiledelta = 500;
-
-    // 记录动画执行开始时间
-    var mobilestart = null;
-    // 是否为删除动画
-    var mobileisDeleting = false;
-
-    // 动画回调函数
-    function mobileLoadDes(time) {
-        window.requestAnimationFrame(mobileLoadDes);
-        // 初始化开始时间
-        if (!mobilestart) start = time;
-        // 获取时间间隔
-        var mobileprogress = time - mobilestart;
-        // 每隔一定的时间，打印出一个新的字符
-        if (mobileprogress > mobiledelta) {
-            // 如果是打字效果
-            if (!mobileisDeleting) {
-                // 给展示文字的span新增一个字符，使用innerHTML来替换，charIndex自增1，然后返回新的字符串子串
-                mobiledes.innerHTML = "&nbsp;" + text.slice(
-                    0,
-                    ++mobilecharIndex
-                );
-                mobiledelta = 500 - Math.random() * 400;
-            } else {
-                // 如果是删除效果，则把文字一个一个减掉
-                mobiledes.innerHTML = "&nbsp;" + text.slice(
-                    0,
-                    mobilecharIndex--
-                );
-            }
-            // 把star更新为当前时间，进行下一个周期
-            mobilestart = time;
-
-            // 如果文字已经全部打印完毕
-            if (mobilecharIndex === text.length) {
-                // 下次开始删除文字
-                mobileisDeleting = true;
-                // 删除文字的间隔为200毫秒
-                mobiledelta = 100;
-                // 额外等待1.2秒后再删除
-                mobilestart = time + 1000;
-            }
-
-            // 如果文字删除完毕
-            if (mobilecharIndex < 0) {
-                mobileisDeleting = false;
-                // 额外增加200毫秒延迟
-                mobilestart = time + 200;
-            }
-        }
-    }
-
-    window.requestAnimationFrame(mobileLoadDes);
-</script>
-                        <img src="" alt="" class="plbg">
-<script>
-    var bgchoice = "default";
-    if(bgchoice=='default')
-        var plbgurl = ""
-    else  
-        var plbgurl = "https://pic.imgdb.cn/item/62642cf2239250f7c5b8ce6d.jpg"
-    $(".plbg").attr("src",plbgurl);
-    $(".plbg").fadeIn(200);
-</script>
+                <!-- ----------------左侧菜单栏html 👇-------------------------------------->
+                
+                <div>
+                    <div id="tab1" class="tab">
+                        <div class="bars">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="close"></div>
                     </div>
-                    <div style="display:none">
-</div>
-                    <link rel="stylesheet" href="https://KyaraTyphoon.github.io/media/css/font-awesome.css">
-
+                    <div class="col-lg-3"></div>
+                        <div id="main" class="col-xs-12 col-sm-12 col-md-12 col-lg-7">
+                            <link rel="stylesheet" href="https://KyaraTyphoon.github.io/media/css/font-awesome.css">
 
 <div id="post-container">
     
@@ -1235,307 +1141,10 @@ menulist.eq(i).show();
         
 </div>
 
-    <div class="postshow postlist">
-        
-        <a data-pjax href="https://KyaraTyphoon.github.io/post/Houdini-knowledge-summary-part-1/" class="apost">
-            <div id="post" style="width:100%">
-                <img src="https://KyaraTyphoon.github.io/post-images/Houdini-knowledge-summary-part-1.png" class="postimage">
-                <div class="posttitlebox">
-                    <div class="posttitle">
-                        Houdini 初学者教程内部分知识点总结 Part 1
-                    </div>
-                </div>
-            </div>
-        </a>
-        <div class="postinfo">
-            <div class="postdate"><i class="fa fa-calendar"></i>2022-03-11</div>
-            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 8 min read</div>
-            <div class="posttag">
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/EI4vDnxQP/" class="postlink">
-                    <i class="fa fa-tag"></i> Houdini
-                </a>
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/u0qkqQ9-UL/" class="postlink">
-                    <i class="fa fa-tag"></i> 知识梳理
-                </a>
-                
-            </div>
-        </div>
-        
 </div>
 
-    <div class="postshow postlist">
-        
-        <a data-pjax href="https://KyaraTyphoon.github.io/post/MusicBox/" class="apost">
-            <div id="post" style="width:100%">
-                <img src="https://KyaraTyphoon.github.io/post-images/MusicBox.png" class="postimage">
-                <div class="posttitlebox">
-                    <div class="posttitle">
-                        Houdini——程序化霓虹摆件生成
-                    </div>
-                </div>
-            </div>
-        </a>
-        <div class="postinfo">
-            <div class="postdate"><i class="fa fa-calendar"></i>2022-03-10</div>
-            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 2 min read</div>
-            <div class="posttag">
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/EI4vDnxQP/" class="postlink">
-                    <i class="fa fa-tag"></i> Houdini
-                </a>
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/NTREGb3egn/" class="postlink">
-                    <i class="fa fa-tag"></i> 个人创作
-                </a>
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/KoFP0ZNQZ2/" class="postlink">
-                    <i class="fa fa-tag"></i> 美术作品
-                </a>
-                
-            </div>
-        </div>
-        
-</div>
-
-    <div class="postshow postlist">
-        
-        <a data-pjax href="https://KyaraTyphoon.github.io/post/space-terminal/" class="apost">
-            <div id="post" style="width:100%">
-                <img src="https://KyaraTyphoon.github.io/post-images/space-terminal.png" class="postimage">
-                <div class="posttitlebox">
-                    <div class="posttitle">
-                        3D场景——Space Terminal 星际航站
-                    </div>
-                </div>
-            </div>
-        </a>
-        <div class="postinfo">
-            <div class="postdate"><i class="fa fa-calendar"></i>2022-01-16</div>
-            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 1 min read</div>
-            <div class="posttag">
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/NTREGb3egn/" class="postlink">
-                    <i class="fa fa-tag"></i> 个人创作
-                </a>
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/KoFP0ZNQZ2/" class="postlink">
-                    <i class="fa fa-tag"></i> 美术作品
-                </a>
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/2CfufqJTBh/" class="postlink">
-                    <i class="fa fa-tag"></i> Substance Painter
-                </a>
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/a3OUoTWwiV/" class="postlink">
-                    <i class="fa fa-tag"></i> Substance Designer
-                </a>
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/OGGF5Y3eoR/" class="postlink">
-                    <i class="fa fa-tag"></i> Blender
-                </a>
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/thkzd-q9HD/" class="postlink">
-                    <i class="fa fa-tag"></i> Unity
-                </a>
-                
-            </div>
-        </div>
-        
-</div>
-
-    <div class="postshow postlist">
-        
-        <a data-pjax href="https://KyaraTyphoon.github.io/post/Datatata/" class="apost">
-            <div id="post" style="width:100%">
-                <img src="https://KyaraTyphoon.github.io/post-images/Datatata.png" class="postimage">
-                <div class="posttitlebox">
-                    <div class="posttitle">
-                        U3D——数据可视化结课作业
-                    </div>
-                </div>
-            </div>
-        </a>
-        <div class="postinfo">
-            <div class="postdate"><i class="fa fa-calendar"></i>2022-01-02</div>
-            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 1 min read</div>
-            <div class="posttag">
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/OGGF5Y3eoR/" class="postlink">
-                    <i class="fa fa-tag"></i> Blender
-                </a>
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/thkzd-q9HD/" class="postlink">
-                    <i class="fa fa-tag"></i> Unity
-                </a>
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/j0OgHSYvFd/" class="postlink">
-                    <i class="fa fa-tag"></i> 团队创作
-                </a>
-                
-            </div>
-        </div>
-        
-</div>
-
-    <div class="postshow postlist">
-        
-        <a data-pjax href="https://KyaraTyphoon.github.io/post/unity-shader-finalhomework/" class="apost">
-            <div id="post" style="width:100%">
-                <img src="https://KyaraTyphoon.github.io/post-images/unity-shader-finalhomework.png" class="postimage">
-                <div class="posttitlebox">
-                    <div class="posttitle">
-                        Unity Shader 结课作业 —— 太遠
-                    </div>
-                </div>
-            </div>
-        </a>
-        <div class="postinfo">
-            <div class="postdate"><i class="fa fa-calendar"></i>2021-11-17</div>
-            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 3 min read</div>
-            <div class="posttag">
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/NTREGb3egn/" class="postlink">
-                    <i class="fa fa-tag"></i> 个人创作
-                </a>
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/KoFP0ZNQZ2/" class="postlink">
-                    <i class="fa fa-tag"></i> 美术作品
-                </a>
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/OGGF5Y3eoR/" class="postlink">
-                    <i class="fa fa-tag"></i> Blender
-                </a>
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/thkzd-q9HD/" class="postlink">
-                    <i class="fa fa-tag"></i> Unity
-                </a>
-                
-            </div>
-        </div>
-        
-</div>
-
-    <div class="postshow postlist">
-        
-        <a data-pjax href="https://KyaraTyphoon.github.io/post/the-last-ship/" class="apost">
-            <div id="post" style="width:100%">
-                <img src="https://KyaraTyphoon.github.io/post-images/the-last-ship.jpg" class="postimage">
-                <div class="posttitlebox">
-                    <div class="posttitle">
-                        U3D场景——“最後”的工業之船
-                    </div>
-                </div>
-            </div>
-        </a>
-        <div class="postinfo">
-            <div class="postdate"><i class="fa fa-calendar"></i>2021-11-11</div>
-            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 2 min read</div>
-            <div class="posttag">
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/NTREGb3egn/" class="postlink">
-                    <i class="fa fa-tag"></i> 个人创作
-                </a>
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/KoFP0ZNQZ2/" class="postlink">
-                    <i class="fa fa-tag"></i> 美术作品
-                </a>
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/2CfufqJTBh/" class="postlink">
-                    <i class="fa fa-tag"></i> Substance Painter
-                </a>
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/a3OUoTWwiV/" class="postlink">
-                    <i class="fa fa-tag"></i> Substance Designer
-                </a>
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/OGGF5Y3eoR/" class="postlink">
-                    <i class="fa fa-tag"></i> Blender
-                </a>
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/thkzd-q9HD/" class="postlink">
-                    <i class="fa fa-tag"></i> Unity
-                </a>
-                
-            </div>
-        </div>
-        
-</div>
-
-    <div class="postshow postlist">
-        
-        <a data-pjax href="https://KyaraTyphoon.github.io/post/bunny/" class="apost">
-            <div id="post" style="width:100%">
-                <img src="https://KyaraTyphoon.github.io/post-images/bunny.png" class="postimage">
-                <div class="posttitlebox">
-                    <div class="posttitle">
-                        3D角色——海岛冰轮初转腾 · 兔兔
-                    </div>
-                </div>
-            </div>
-        </a>
-        <div class="postinfo">
-            <div class="postdate"><i class="fa fa-calendar"></i>2021-10-31</div>
-            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 1 min read</div>
-            <div class="posttag">
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/KoFP0ZNQZ2/" class="postlink">
-                    <i class="fa fa-tag"></i> 美术作品
-                </a>
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/a3OUoTWwiV/" class="postlink">
-                    <i class="fa fa-tag"></i> Substance Designer
-                </a>
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/OGGF5Y3eoR/" class="postlink">
-                    <i class="fa fa-tag"></i> Blender
-                </a>
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/j0OgHSYvFd/" class="postlink">
-                    <i class="fa fa-tag"></i> 团队创作
-                </a>
-                
-            </div>
-        </div>
-        
-</div>
-
-    <div class="postshow postlist">
-        
-        <a data-pjax href="https://KyaraTyphoon.github.io/post/substance-designer-summary/" class="apost">
-            <div id="post" style="width:100%">
-                <img src="https://KyaraTyphoon.github.io/post-images/substance-designer-summary.png" class="postimage">
-                <div class="posttitlebox">
-                    <div class="posttitle">
-                        Substance Designer 入门节点知识总结
-                    </div>
-                </div>
-            </div>
-        </a>
-        <div class="postinfo">
-            <div class="postdate"><i class="fa fa-calendar"></i>2021-10-10</div>
-            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 1 min read</div>
-            <div class="posttag">
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/u0qkqQ9-UL/" class="postlink">
-                    <i class="fa fa-tag"></i> 知识梳理
-                </a>
-                
-                <a data-pjax href="https://KyaraTyphoon.github.io/tag/a3OUoTWwiV/" class="postlink">
-                    <i class="fa fa-tag"></i> Substance Designer
-                </a>
-                
-            </div>
-        </div>
-        
-</div>
-
-</div>
-
-
-                    <div>
-                        <div class="pcpagi">
+                            <div>
+                                <div class="pcpagi">
     <div class="pagi">
         <ul>
             
@@ -1545,7 +1154,7 @@ menulist.eq(i).show();
                     <li><a id="page2" class="active">2</a></li>
                     <li><a id="page3">3</a></li>
                     
-            <li><a data-pjax href="https://KyaraTyphoon.github.io/page/2" style="width:100px" id="next">下一页</a></li>
+            <li><a style="width:100px">&nbsp;</a></li>
             
                 </ul>
     </div>
@@ -1553,14 +1162,10 @@ menulist.eq(i).show();
 
 <div id="pagination-prev" style="display:none"> 
 </div>
-<div id="pagination-next" style="display:none"> https://KyaraTyphoon.github.io/page/2</div>
+<div id="pagination-next" style="display:none"> </div>
 
 <div class="pagination-container">
-    
-    <a href="#" class="mobile-prevpage"></a>
       
-    
-    <a data-pjax href="https://KyaraTyphoon.github.io/page/2" class="mobile-nextpage">下一页</a>
     
 </div>
 
@@ -1589,32 +1194,19 @@ menulist.eq(i).show();
         page2.innerHTML = nextnum - 1;
     }
 </script>
-                    </div>
+                                <div style="padding-bottom:10%"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
                 </div>
-                <div class="col-md-1 col-lg-2"></div>
-                
                 <!-- ----------------左侧菜单栏html 👆-------------------------------------->
+                
                 <!------------------ 顶部菜单栏html👇--------->
-                 
+                
                 <!------------------ 顶部菜单栏html👆--------->
-                </div>
-            </div>
-            <div id="bg">
-            </div>
-            <!------- 背景图加载方式👇----- -->
-            <div id="bgchoice" style="display: none">default
             </div>
             
-            <div id="bgurl" style="display:none">/media/images/bgimg.png</div>
-            
-            <!------- 背景图加载方式👆----- --> 
-        <div id="landlord">
-            <div class="message" style="opacity:0"></div>
-            <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
-        </div>
-    </div>
-        
-            <head>
+                        <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 </head>
 
@@ -1676,13 +1268,32 @@ menulist.eq(i).show();
         }
     }
 </script>
-        
-    <div id="domainname" style="display:none">https://KyaraTyphoon.github.io
+            
         </div>
+        <div id="bg">
+        </div>
+        <!------- 背景图加载方式👇----- -->
+        <div id="bgchoice" style="display: none">default
+                    </div>
+                    
+                    <div id="bgurl" style="display:none">/media/images/bgimg.png</div>
+                       
+        </div>
+        <!------- 背景图加载方式👆 --------------->
+</div>
+</div>
 
+        <div id="landlord">
+            <div class="message" style="opacity:0"></div>
+            <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
+        </div>
+        <div id="domainname" style="display:none">https://KyaraTyphoon.github.io
+                </div>
+</body>
+</html>
 <!-------------------- live2d功能👇 --------------------------->
-    
-<!-------------------- live2d功能👆 --------------------------->
+
+<!-------------------- live2d功能👆--------------------------->
 
 <!------------ 加载全局背景图功能👇（开始时没有写好，这功能有点鸡肋/(ㄒoㄒ)/~~） -->
 <script>
@@ -1703,9 +1314,5 @@ menulist.eq(i).show();
 </script>
 <!------------ 加载全局背景图功能👆（开始时没有写好，这功能有点鸡肋/(ㄒoㄒ)/~~） -->
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
 
-        <script src="https://KyaraTyphoon.github.io/media/js/index.js"></script>
-        
-</body>
-</html>
+<script src="https://KyaraTyphoon.github.io/media/js/index.js"></script>
