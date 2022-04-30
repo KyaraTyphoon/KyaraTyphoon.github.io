@@ -1,23 +1,222 @@
 <!DOCTYPE html>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet" href="https://KyaraTyphoon.github.io/media/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://KyaraTyphoon.github.io/media/css/live2d.css">
-<link rel="stylesheet" href="https://KyaraTyphoon.github.io/styles/main.css">
-<link rel="stylesheet" href="https://KyaraTyphoon.github.io/media/css/font-awesome.css">
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-<title>指定龙场</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="
+……之前面试被面试官教育，数字资产应该做的实用、对美术人员来说易用。
+因此在此文记录一些看教程和实践的总结与心得，让自己长期注意并取得些许进步。
 
+外部输入
+创建数字资产时可以选择最多最少有几个输入。
+
+曲线——作为形状的基础；
+世界中的..." />
+    <meta name="keywords" content="Houdini,知识梳理" />
+    <link rel="stylesheet" href="https://KyaraTyphoon.github.io/media/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://KyaraTyphoon.github.io/styles/main.css">
+    <!-- 代码渲染风格css -->
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css">
+    
+    <!-- 代码高亮插件 -->
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+    <!-- 代码复制插件 -->
+    <script src="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/js/clipboard.min.js"></script>
+    <!-- live2d插件 -->
+    <link rel="stylesheet" href="https://KyaraTyphoon.github.io/media/css/live2d.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+    <!-- 数学公式 -->
+    
+    <title>Houdini 数字资产初学者制作心得</title>
+
+    <!-- 大纲索引css调整 -->
+    
+    <style>
+        .markdownIt-TOC {
+            margin-left: 28%;
+            padding-left: 2px;
+            width: 80%;
+        }
+
+        .markdownIt-TOC li {
+            padding-left: 8%;
+        }
+    </style>
+    
+</head>
 
 <body>
-
+    <div id="landlord">
+        <div class="message" style="opacity:0"></div>
+        <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
+    </div>
+    <div id="domainname" style="display:none">https://KyaraTyphoon.github.io</div>
     <div id="content">
-        <div class="nav-large">
-            <div class="row">
-                <!--------------- pc端菜单栏👇 ---------------->
-                <div class="side"><head>
+        <div>
+            <!----------- 移动端导航栏👇 ----------------->
+            <div id="bar">
+                <style>
+  .navmobile {
+    z-index: 15;
+    max-height: 40vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .navbar {
+      max-width: 100vw;
+    }
+  }
+
+  @media screen and (max-width:1200px) and (min-width: 768px) {
+    @media (min-width: 768px) {
+      .navbar-nav {
+        float: right;
+        margin: 0;
+      }
+    }
+  }
+
+  @media screen and (max-width:768px) {
+    .mbapspan {
+      padding: 0;
+    }
+  }
+</style>
+<div class="pjaxloading"  onclick="pjaxloadingClose()">
+  <div class="loadingbackground"></div>
+  <div id="loading">
+    <div class="loading">
+    </div>
+  </div>
+</div>
+<nav class="navbar navbar-inverse navbar-fixed-top navmobile">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barmenu"
+        aria-expanded="false" id="barbutton">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a data-pjax class="navbar-brand" style="color:white" href="https://KyaraTyphoon.github.io">指定龙场&nbsp;&nbsp;|</a>
+      <span class="navbar-brand mbapspan"><i id="mbaplayer" class="fa fa-play-circle-o" aria-hidden="true"
+          style="font-size: 28px;top: 12px;position: absolute;" onclick="aplayerPlay();"></i></span>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="barmenu">
+      <ul class="nav navbar-nav">
+        
+        
+        <li>
+          <a data-pjax href="/" style="color:white">
+            首页
+          </a>
+        </li>
+        
+        
+        
+        <li>
+          <a data-pjax href="https://kyaratyphoon.github.io/tag/NTREGb3egn/" style="color:white">
+            个人创作
+          </a>
+        </li>
+        
+        
+        
+        <li>
+          <a data-pjax href="https://kyaratyphoon.github.io/tag/KoFP0ZNQZ2/" style="color:white">
+            美术作品
+          </a>
+        </li>
+        
+        
+        
+        <li>
+          <a data-pjax href="/archives" style="color:white">
+            归档
+          </a>
+        </li>
+        
+        
+        
+        <li>
+          <a data-pjax href="/tags" style="color:white">
+            标签
+          </a>
+        </li>
+        
+        
+        
+        <li>
+          <a data-pjax href="/post/about" style="color:white">
+            关于
+          </a>
+        </li>
+        
+        
+        
+        <li>
+          <a data-pjax href="https://kyaratyphoon.github.io/tag/j0OgHSYvFd/" style="color:white">
+            团队合作
+          </a>
+        </li>
+        
+        
+        
+        <li><a data-pjax href="https://KyaraTyphoon.github.io/talk" style="color:white">说说</a></li>
+        
+        
+          
+        <li><a data-pjax href="https://KyaraTyphoon.github.io/friends" style="color:white">友链</a></li>
+
+        
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+
+  <!-- 引入jQuery核心js文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+  <script>
+    let btstate = false;
+    var bt = $("#barbutton");
+    var bm = $("#barmenu");
+    bt.click(function () {
+      dropdown();
+    })
+    function dropdown() {
+      console.log(btstate);
+      //下拉
+      if (btstate == false) {
+        bt.removeClass("collapsed");
+        bt.attr("aria-expanded", "true");
+        bm.attr("aria-expanded", "true")
+        bm.fadeIn(700);
+        btstate = true;
+      }
+      else {
+        bt.addClass("collapsed");
+        bt.attr("aria-expanded", "false");
+        bm.removeClass("in");
+        bm.hide();
+        bm.attr("aria-expanded", "false");
+        btstate = false;
+      }
+    }
+  </script> 
+            </div>
+            <!----------- 移动端导航栏👆 ----------------->
+
+            <!--------------- pc端菜单栏👇 ---------------->
+            <div class="side"><head>
     <link rel="stylesheet" href="https://KyaraTyphoon.github.io/media/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://KyaraTyphoon.github.io/styles/main.css">
     
@@ -946,510 +1145,202 @@ menulist.eq(i).show();
     }
 </script>
 <!----夜间模式👆--></div>
-                <!--------------- pc端菜单栏👆 ---------------->
+            <!--------------- pc端菜单栏👆 ---------------->
 
-                <!----------- 移动端导航栏👇 ----------------->
-                <div class="tbar"> <style>
-  .navmobile {
-    z-index: 15;
-    max-height: 40vh;
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
-
-  @media screen and (max-width: 1200px) {
-    .navbar {
-      max-width: 100vw;
-    }
-  }
-
-  @media screen and (max-width:1200px) and (min-width: 768px) {
-    @media (min-width: 768px) {
-      .navbar-nav {
-        float: right;
-        margin: 0;
-      }
-    }
-  }
-
-  @media screen and (max-width:768px) {
-    .mbapspan {
-      padding: 0;
-    }
-  }
-</style>
-<div class="pjaxloading"  onclick="pjaxloadingClose()">
-  <div class="loadingbackground"></div>
-  <div id="loading">
-    <div class="loading">
-    </div>
-  </div>
-</div>
-<nav class="navbar navbar-inverse navbar-fixed-top navmobile">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barmenu"
-        aria-expanded="false" id="barbutton">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a data-pjax class="navbar-brand" style="color:white" href="https://KyaraTyphoon.github.io">指定龙场&nbsp;&nbsp;|</a>
-      <span class="navbar-brand mbapspan"><i id="mbaplayer" class="fa fa-play-circle-o" aria-hidden="true"
-          style="font-size: 28px;top: 12px;position: absolute;" onclick="aplayerPlay();"></i></span>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="barmenu">
-      <ul class="nav navbar-nav">
-        
-        
-        <li>
-          <a data-pjax href="/" style="color:white">
-            首页
-          </a>
-        </li>
-        
-        
-        
-        <li>
-          <a data-pjax href="https://kyaratyphoon.github.io/tag/NTREGb3egn/" style="color:white">
-            个人创作
-          </a>
-        </li>
-        
-        
-        
-        <li>
-          <a data-pjax href="https://kyaratyphoon.github.io/tag/KoFP0ZNQZ2/" style="color:white">
-            美术作品
-          </a>
-        </li>
-        
-        
-        
-        <li>
-          <a data-pjax href="/archives" style="color:white">
-            归档
-          </a>
-        </li>
-        
-        
-        
-        <li>
-          <a data-pjax href="/tags" style="color:white">
-            标签
-          </a>
-        </li>
-        
-        
-        
-        <li>
-          <a data-pjax href="/post/about" style="color:white">
-            关于
-          </a>
-        </li>
-        
-        
-        
-        <li>
-          <a data-pjax href="https://kyaratyphoon.github.io/tag/j0OgHSYvFd/" style="color:white">
-            团队合作
-          </a>
-        </li>
-        
-        
-        
-        <li><a data-pjax href="https://KyaraTyphoon.github.io/talk" style="color:white">说说</a></li>
-        
-        
-          
-        <li><a data-pjax href="https://KyaraTyphoon.github.io/friends" style="color:white">友链</a></li>
-
-        
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
-
-
-  <!-- 引入jQuery核心js文件 -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-  <script>
-    let btstate = false;
-    var bt = $("#barbutton");
-    var bm = $("#barmenu");
-    bt.click(function () {
-      dropdown();
-    })
-    function dropdown() {
-      console.log(btstate);
-      //下拉
-      if (btstate == false) {
-        bt.removeClass("collapsed");
-        bt.attr("aria-expanded", "true");
-        bm.attr("aria-expanded", "true")
-        bm.fadeIn(700);
-        btstate = true;
-      }
-      else {
-        bt.addClass("collapsed");
-        bt.attr("aria-expanded", "false");
-        bm.removeClass("in");
-        bm.hide();
-        bm.attr("aria-expanded", "false");
-        btstate = false;
-      }
-    }
-  </script> </div>
-                <!----------- 移动端导航栏👆 ----------------->
-
-                <!-- ----------------左侧菜单栏html 👇-------------------------------------->
-                
-                <div>
-                    <div id="tab1" class="tab">
-                        <div class="bars">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <div class="close"></div>
+            <!-- ----------------左侧菜单栏html 👇-------------------------------------->
+            
+            <div>
+                <div id="tab1" class="tab">
+                    <div class="bars">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
-                    <div class="col-lg-3"></div>
-                        <div id="main" class="col-xs-12 col-sm-12 col-md-12 col-lg-7">
-                            <link rel="stylesheet" href="https://KyaraTyphoon.github.io/media/css/font-awesome.css">
+                    <div class="close"></div>
+                </div>
+                <div class="col-md-1 col-lg-3"></div>
+                <!-- main标签，pjax渲染时加载以下内容👇 -->
+                <div id="main" class="col-xs-12 col-sm-12 col-md-12 col-lg-7" style="padding:0;">
+                    <div class="readingmode" onclick="readingmode()">阅</div>
+                    <link rel="stylesheet" href="https://KyaraTyphoon.github.io/media/css/font-awesome.css">
 
-    <div style="display: none;">
-        
+<body>
+    <div class="allcontent" id="postdetail">
+        <div class="postshow postpadding" style="padding-bottom: 0;">
             
-                <span name="plfeature">https://KyaraTyphoon.github.io/post-images/Forest.png</span>
-                
-            <span name="pltitle">【3D场景】森林</span>
-            <span name="pllink">https://KyaraTyphoon.github.io/post/Forest/</span>
-            <span name="pldate">2022-04-24</span>
-            <span name="plstats">1 min read</span>
-            
-                <span name="pltag" alt="【3D场景】森林">UnrealEngine</span>
-                <span name="pltaglink" alt="【3D场景】森林">https://KyaraTyphoon.github.io/tag/UnrealEngine/</span>
-            
-                <span name="pltag" alt="【3D场景】森林">个人创作</span>
-                <span name="pltaglink" alt="【3D场景】森林">https://KyaraTyphoon.github.io/tag/NTREGb3egn/</span>
-            
-                <span name="pltag" alt="【3D场景】森林">美术作品</span>
-                <span name="pltaglink" alt="【3D场景】森林">https://KyaraTyphoon.github.io/tag/KoFP0ZNQZ2/</span>
-            
-        
-            
-                <span name="plfeature">https://KyaraTyphoon.github.io/post-images/3dSceneSwing.png</span>
-                
-            <span name="pltitle">【3D场景】秋千</span>
-            <span name="pllink">https://KyaraTyphoon.github.io/post/3dSceneSwing/</span>
-            <span name="pldate">2022-04-21</span>
-            <span name="plstats">1 min read</span>
-            
-                <span name="pltag" alt="【3D场景】秋千">UnrealEngine</span>
-                <span name="pltaglink" alt="【3D场景】秋千">https://KyaraTyphoon.github.io/tag/UnrealEngine/</span>
-            
-                <span name="pltag" alt="【3D场景】秋千">个人创作</span>
-                <span name="pltaglink" alt="【3D场景】秋千">https://KyaraTyphoon.github.io/tag/NTREGb3egn/</span>
-            
-                <span name="pltag" alt="【3D场景】秋千">美术作品</span>
-                <span name="pltaglink" alt="【3D场景】秋千">https://KyaraTyphoon.github.io/tag/KoFP0ZNQZ2/</span>
-            
-                <span name="pltag" alt="【3D场景】秋千">Substance Painter</span>
-                <span name="pltaglink" alt="【3D场景】秋千">https://KyaraTyphoon.github.io/tag/2CfufqJTBh/</span>
-            
-                <span name="pltag" alt="【3D场景】秋千">Blender</span>
-                <span name="pltaglink" alt="【3D场景】秋千">https://KyaraTyphoon.github.io/tag/OGGF5Y3eoR/</span>
-            
-        
-            
-                <span name="plfeature">https://KyaraTyphoon.github.io/post-images/MusicBox.png</span>
-                
-            <span name="pltitle">Houdini——程序化霓虹摆件生成</span>
-            <span name="pllink">https://KyaraTyphoon.github.io/post/MusicBox/</span>
-            <span name="pldate">2022-03-10</span>
-            <span name="plstats">2 min read</span>
-            
-                <span name="pltag" alt="Houdini——程序化霓虹摆件生成">Houdini</span>
-                <span name="pltaglink" alt="Houdini——程序化霓虹摆件生成">https://KyaraTyphoon.github.io/tag/EI4vDnxQP/</span>
-            
-                <span name="pltag" alt="Houdini——程序化霓虹摆件生成">个人创作</span>
-                <span name="pltaglink" alt="Houdini——程序化霓虹摆件生成">https://KyaraTyphoon.github.io/tag/NTREGb3egn/</span>
-            
-                <span name="pltag" alt="Houdini——程序化霓虹摆件生成">美术作品</span>
-                <span name="pltaglink" alt="Houdini——程序化霓虹摆件生成">https://KyaraTyphoon.github.io/tag/KoFP0ZNQZ2/</span>
-            
-        
-            
-                <span name="plfeature">https://KyaraTyphoon.github.io/post-images/space-terminal.png</span>
-                
-            <span name="pltitle">3D场景——Space Terminal 星际航站</span>
-            <span name="pllink">https://KyaraTyphoon.github.io/post/space-terminal/</span>
-            <span name="pldate">2022-01-16</span>
-            <span name="plstats">1 min read</span>
-            
-                <span name="pltag" alt="3D场景——Space Terminal 星际航站">个人创作</span>
-                <span name="pltaglink" alt="3D场景——Space Terminal 星际航站">https://KyaraTyphoon.github.io/tag/NTREGb3egn/</span>
-            
-                <span name="pltag" alt="3D场景——Space Terminal 星际航站">美术作品</span>
-                <span name="pltaglink" alt="3D场景——Space Terminal 星际航站">https://KyaraTyphoon.github.io/tag/KoFP0ZNQZ2/</span>
-            
-                <span name="pltag" alt="3D场景——Space Terminal 星际航站">Substance Painter</span>
-                <span name="pltaglink" alt="3D场景——Space Terminal 星际航站">https://KyaraTyphoon.github.io/tag/2CfufqJTBh/</span>
-            
-                <span name="pltag" alt="3D场景——Space Terminal 星际航站">Substance Designer</span>
-                <span name="pltaglink" alt="3D场景——Space Terminal 星际航站">https://KyaraTyphoon.github.io/tag/a3OUoTWwiV/</span>
-            
-                <span name="pltag" alt="3D场景——Space Terminal 星际航站">Blender</span>
-                <span name="pltaglink" alt="3D场景——Space Terminal 星际航站">https://KyaraTyphoon.github.io/tag/OGGF5Y3eoR/</span>
-            
-                <span name="pltag" alt="3D场景——Space Terminal 星际航站">Unity</span>
-                <span name="pltaglink" alt="3D场景——Space Terminal 星际航站">https://KyaraTyphoon.github.io/tag/thkzd-q9HD/</span>
-            
-        
-            
-                <span name="plfeature">https://KyaraTyphoon.github.io/post-images/unity-shader-finalhomework.png</span>
-                
-            <span name="pltitle">Unity Shader 结课作业 —— 太遠</span>
-            <span name="pllink">https://KyaraTyphoon.github.io/post/unity-shader-finalhomework/</span>
-            <span name="pldate">2021-11-17</span>
-            <span name="plstats">3 min read</span>
-            
-                <span name="pltag" alt="Unity Shader 结课作业 —— 太遠">个人创作</span>
-                <span name="pltaglink" alt="Unity Shader 结课作业 —— 太遠">https://KyaraTyphoon.github.io/tag/NTREGb3egn/</span>
-            
-                <span name="pltag" alt="Unity Shader 结课作业 —— 太遠">美术作品</span>
-                <span name="pltaglink" alt="Unity Shader 结课作业 —— 太遠">https://KyaraTyphoon.github.io/tag/KoFP0ZNQZ2/</span>
-            
-                <span name="pltag" alt="Unity Shader 结课作业 —— 太遠">Blender</span>
-                <span name="pltaglink" alt="Unity Shader 结课作业 —— 太遠">https://KyaraTyphoon.github.io/tag/OGGF5Y3eoR/</span>
-            
-                <span name="pltag" alt="Unity Shader 结课作业 —— 太遠">Unity</span>
-                <span name="pltaglink" alt="Unity Shader 结课作业 —— 太遠">https://KyaraTyphoon.github.io/tag/thkzd-q9HD/</span>
-            
-        
-            
-                <span name="plfeature">https://KyaraTyphoon.github.io/post-images/the-last-ship.jpg</span>
-                
-            <span name="pltitle">U3D场景——“最後”的工業之船</span>
-            <span name="pllink">https://KyaraTyphoon.github.io/post/the-last-ship/</span>
-            <span name="pldate">2021-11-11</span>
-            <span name="plstats">2 min read</span>
-            
-                <span name="pltag" alt="U3D场景——“最後”的工業之船">个人创作</span>
-                <span name="pltaglink" alt="U3D场景——“最後”的工業之船">https://KyaraTyphoon.github.io/tag/NTREGb3egn/</span>
-            
-                <span name="pltag" alt="U3D场景——“最後”的工業之船">美术作品</span>
-                <span name="pltaglink" alt="U3D场景——“最後”的工業之船">https://KyaraTyphoon.github.io/tag/KoFP0ZNQZ2/</span>
-            
-                <span name="pltag" alt="U3D场景——“最後”的工業之船">Substance Painter</span>
-                <span name="pltaglink" alt="U3D场景——“最後”的工業之船">https://KyaraTyphoon.github.io/tag/2CfufqJTBh/</span>
-            
-                <span name="pltag" alt="U3D场景——“最後”的工業之船">Substance Designer</span>
-                <span name="pltaglink" alt="U3D场景——“最後”的工業之船">https://KyaraTyphoon.github.io/tag/a3OUoTWwiV/</span>
-            
-                <span name="pltag" alt="U3D场景——“最後”的工業之船">Blender</span>
-                <span name="pltaglink" alt="U3D场景——“最後”的工業之船">https://KyaraTyphoon.github.io/tag/OGGF5Y3eoR/</span>
-            
-                <span name="pltag" alt="U3D场景——“最後”的工業之船">Unity</span>
-                <span name="pltaglink" alt="U3D场景——“最後”的工業之船">https://KyaraTyphoon.github.io/tag/thkzd-q9HD/</span>
-            
-        
-            
-                <span name="plfeature">https://KyaraTyphoon.github.io/post-images/Bunnyman.jpg</span>
-                
-            <span name="pltitle">Blender角色雕刻</span>
-            <span name="pllink">https://KyaraTyphoon.github.io/post/Bunnyman/</span>
-            <span name="pldate">2021-07-18</span>
-            <span name="plstats">1 min read</span>
-            
-                <span name="pltag" alt="Blender角色雕刻">个人创作</span>
-                <span name="pltaglink" alt="Blender角色雕刻">https://KyaraTyphoon.github.io/tag/NTREGb3egn/</span>
-            
-                <span name="pltag" alt="Blender角色雕刻">美术作品</span>
-                <span name="pltaglink" alt="Blender角色雕刻">https://KyaraTyphoon.github.io/tag/KoFP0ZNQZ2/</span>
-            
-                <span name="pltag" alt="Blender角色雕刻">Blender</span>
-                <span name="pltaglink" alt="Blender角色雕刻">https://KyaraTyphoon.github.io/tag/OGGF5Y3eoR/</span>
-            
-        
-    </div>
-
-    
-    <div id="post-container" class="eleg-allpostscontainer">
-        <div v-for="post in postinfo" class="eleg-posts">
-            <div v-if="post.elegcontainer=='eleg-postcontainer-left'">
-                    <div :class="post.elegcontainer">
-                        <img :src="post.feature" alt="" :class="post.imgclass">
-                        
-                        <img class="eleg-swordsmen-left" src="https://KyaraTyphoon.github.io/media/images/swordsmenleft.webp" alt="">
-                        
-                        <div class="eleg-info">
-                            <span class="eleg-title">{{post.title}}</span>
-                            <div style="margin-top:15px;">
-                                <span class="postdate eleg-date"><i class="fa fa-calendar"></i>{{post.date}}</span>
-                                <span class="poststatus postdate eleg-stats"><i class="fa fa-clock-o"></i> {{post.stats}}</span>
-                            </div>
-                            <div style="margin-top:50px">
-                                <a :href="post.link" class="eleg-btn" data-pjax>阅读全文</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='eleg-tags'>
-                        <div v-for="tag in post.tags">
-                            <div class="posttag">
-                                <a data-pjax href="" class="postlink eleg-postlink">
-                                    <i class="fa fa-tag"></i>{{tag}}
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+            <div class="postdetailimg">
+                <img src="https://KyaraTyphoon.github.io/post-images/AboutMakingHDA.png" class="postimage" style="cursor:auto">
             </div>
-            <div v-else>
-                    <div :class="post.elegcontainer">
-                        <div class="eleg-info">
-                            <span class="eleg-title">{{post.title}}</span>
-                            <div style="margin-top:15px;">
-                                <span class="postdate eleg-date"><i class="fa fa-calendar"></i>{{post.date}}</span>
-                                <span class="poststatus postdate eleg-stats"><i class="fa fa-clock-o"></i> {{post.stats}}</span>
-                            </div>
-                            <div style="margin-top:50px">
-                                <a :href="post.link" class="eleg-btn" data-pjax>阅读全文</a>
-                            </div>
-                        </div>
-                        
-                        <img class="eleg-swordsmen" src="https://KyaraTyphoon.github.io/media/images/swordsmen.webp" alt="">
-                        
-                        <img :src="post.feature" alt="" :class="post.imgclass">
-                    </div>
-                    <div class='eleg-tags'>
-                        <div v-for="tag in post.tags">
-                            <div class="posttag">
-                                <a data-pjax href="" class="postlink eleg-postlink">
-                                    <i class="fa fa-tag"></i>{{tag}}
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+            <div class="postinfo-detail">
+                <div class="postdate"><i class="fa fa-calendar"></i>2022-04-30</div>
+                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 2 min read</div>
+                <div class="posttag">
+                    
+                    <a data-pjax href="https://KyaraTyphoon.github.io/tag/EI4vDnxQP/" class="postlink">
+                        <i class="fa fa-tag"></i> Houdini
+                    </a>
+                    
+                    <a data-pjax href="https://KyaraTyphoon.github.io/tag/u0qkqQ9-UL/" class="postlink">
+                        <i class="fa fa-tag"></i> 知识梳理
+                    </a>
+                    
+                </div>
             </div>
+            
+        <div id="articlecontent">
+            <div id="texttitle" style="text-align: center">
+                <h2 id="ptitle">Houdini 数字资产初学者制作心得</h2>
+                <!-- id 将作为查询条件 -->
+                <div id="pl" style="display:none">https://KyaraTyphoon.github.io/post/AboutMakingHDA/</div>
+                <div id="rootaddr" style="display:none">https://KyaraTyphoon.github.io</div>
+                
+            </div>
+            <div class="text ">
+                <blockquote>
+<p>……之前面试被面试官教育，数字资产应该做的实用、对美术人员来说易用。<br>
+因此在此文记录一些看教程和实践的总结与心得，让自己长期注意并取得些许进步。</p>
+</blockquote>
+<h1 id="外部输入">外部输入</h1>
+<p>创建数字资产时可以选择最多最少有几个输入。</p>
+<ol>
+<li>曲线——作为形状的基础；</li>
+<li>世界中的物体——作为碰撞体；</li>
+<li>根据环境创造的方块或物体本身——作为依附、包围盒（堆叠、藤蔓）。</li>
+</ol>
+<h1 id="模型规格-与-外观">模型规格 与 外观</h1>
+<ol>
+<li>使用外部输入（方块、曲线）；</li>
+<li>列数值（半径等）；</li>
+<li>Multi Param的使用以叠加某特征。</li>
+</ol>
+<h1 id="随机性">随机性</h1>
+<h2 id="mountain">Mountain</h2>
+<p>给一个Offset值，随机化基础形状、颜色、Sweep第二输入等。</p>
+<h2 id="random-selection">Random Selection</h2>
+<p>为多个重复项增添不同的细节时使用。例如 Titan 电缆，随机选择其中的几根缠绕小电缆。</p>
+<h2 id="seed">Seed</h2>
+<p>例如撒点嗯。<br>
+种子根据情况看是否是直接一个参数多次使用。</p>
+<h1 id="物理模拟">物理模拟</h1>
+<ol>
+<li>模拟按钮列在参数列表中；</li>
+<li>给一个Toggle参数到Switch切换模拟与否，以快速预览模拟之前的形状；</li>
+<li>Timeshift 留好一定模拟帧数；</li>
+<li>使用数字资产的输入连接到碰撞输入；</li>
+</ol>
+<h1 id="uv设置">UV设置</h1>
+<h2 id="auto-uv">Auto UV</h2>
+<p>自动展开UV，暂无心得。</p>
+<h2 id="使用automatic-trim-texture-与-trim-texture-utility">使用Automatic trim texture 与 Trim texture utility</h2>
+<p>根据给予的材质ID图与物体UV的缩放，自动拼排UV。<br>
+可左右、上下平铺的物体有奇效（电缆啥的）。</p>
+<h2 id="generate-uv-toggle">Generate UV Toggle</h2>
+<p>相对复杂模型展开UV会耗时，因此给个按钮拉给Switch更方便。</p>
+<h1 id="贴图烘焙-与-材质设置">贴图烘焙 与 材质设置</h1>
+<ol>
+<li>烘焙按钮预留；</li>
+<li>材质的位置预留；</li>
+<li>烘焙贴图的尺寸、追踪距离、贴图存储位置都可作为参数；</li>
+<li>遮罩类贴图充分利用RGB三通道。</li>
+</ol>
+<h1 id="pdg">PDG</h1>
+<p>批量生成要考虑生成的参数设置是否能让结果足够丰富而不是一眼重复，我还需要更多的实践与调试。</p>
+
+            </div>
+            <hr style="width: 80%;">
+            
+            <div class="postfooter">
+                <ul class="post-copyright">
+                    <li><strong>文章作者：</strong></li>
+            <li><strong>原文链接：</strong>https://KyaraTyphoon.github.io/post/AboutMakingHDA/</li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用<i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA
+                许可协议。转载请注明出处！</li>
+            </ul>
+        </div>
+        
+        <div id="otherpost">
+            
+            
+            <a data-pjax class="next-post-pc" href="https://KyaraTyphoon.github.io/post/houdini-ue5-Titan/"  style="color: black;">
+                <div id="npcontainer">
+                    
+                    <img src="https://KyaraTyphoon.github.io/post-images/houdini-ue5-Titan.png" style="width: 100%;" class="opimg">
+                    
+                    <h4 class="optitle">Houdini + UE5 Project Titan 学习笔记</h4>
+                </div>
+            </a>
+            <div class="next-post">
+                下一篇 <a  data-pjax href="https://KyaraTyphoon.github.io/post/houdini-ue5-Titan/">Houdini + UE5 Project Titan 学习笔记</a>
+            </div>
+            
         </div>
     </div>
-
-    
-    <script>
-    var app2 = new Vue({
-      el: '#post-container',
-      mounted:function(){
-        this.getpostInfo();
-      },
-      methods:{
-         getpostInfo:function(){
-             var plflist = $("span[name='plfeature']");
-             var pltlist = $("span[name='pltitle']");
-             var plllist = $("span[name='pllink']");
-             var pldlist = $("span[name='pldate']");
-             var plslist = $("span[name='plstats']");
-             var pltaglist = $("span[name='pltag']");
-             for(var i=0;i<this.pagesize&&i<plflist.length;i++){
-                 var d = {};
-                 var tags = []
-                 d["feature"] = plflist.eq(i).html();
-                 d["title"] = pltlist.eq(i).html();
-                 d["link"] = plllist.eq(i).html();
-                 d["date"] = pldlist.eq(i).html();
-                 d['stats'] = plslist.eq(i).html();
-                 for(var j=0;j<pltaglist.length;j++){
-                     if(pltaglist.eq(j).attr('alt')==d['title'])
-                        tags.push(pltaglist.eq(j).html())
-                 }
-                 d["tags"] = tags;
-                 if(i%2==0)
-                 {
-                     d['elegcontainer'] = 'eleg-postcontainer-left';
-                     d['imgclass'] = 'eleg-img-left'
-                 }
-                 else{
-                    d['elegcontainer'] = 'eleg-postcontainer-right';
-                    d['imgclass'] = 'eleg-img-right' 
-                 }
-                 this.postinfo.push(d);
-             }
-         }
-      },
-      data: {
-        pagesize: "10",
-        postinfo:[],
-      }
-    })
-    </script>
-
-                            <div>
-                                <div class="pcpagi">
-    <div class="pagi">
-        <ul>
-            
-            <li><a style="width:100px">&nbsp;</a></li>
-            
-                    <li><a id="page1">1</a></li>
-                    <li><a id="page2" class="active">2</a></li>
-                    <li><a id="page3">3</a></li>
-                    
-            <li><a style="width:100px">&nbsp;</a></li>
-            
-                </ul>
     </div>
-</div>
-
-<div id="pagination-prev" style="display:none"> 
-</div>
-<div id="pagination-next" style="display:none"> </div>
-
-<div class="pagination-container">
-      
-    
-</div>
-
+    </div>
+    <!-- 弹窗 -->
+    <div id="myModal" class="modal">
+        <img class="modal-content" id="img01">
+    </div>
+</body>
 <script>
-    var prevstr = document.getElementById("pagination-prev").innerHTML;
-    var nextstr = document.getElementById("pagination-next").innerHTML;
-    var page1 = document.getElementById("page1");
-    var page2 = document.getElementById("page2");
-    var page3 = document.getElementById("page3");
-    page1.innerHTML = '-';
-    page2.innerHTML = '1';
-    page3.innerHTML = '-';
-    if (prevstr.length > 5) {
-        if (prevstr.indexOf("page/") != -1) {
-            var prevnum = parseInt(prevstr.split("page/")[1]);
-            page1.innerHTML = prevnum;
-            page2.innerHTML = prevnum + 1;
-        } else {
-            page1.innerHTML = 1;
-            page2.innerHTML = 2;
-        }
-    }
-    if (nextstr.indexOf("page/") != -1) {
-        var nextnum = parseInt(nextstr.split("page/")[1]);
-        page3.innerHTML = nextnum;
-        page2.innerHTML = nextnum - 1;
-    }
+    //文章阅读热度
+    var pl = $("#pl").html();
+    var rootaddr = $("#rootaddr").html();
+    pl = pl.replace(rootaddr, "");
+    $("#hotnum").attr('id', pl);
 </script>
-                                <div style="padding-bottom:10%"></div>
+                    <div class="toc-container">
+                        <ul class="markdownIt-TOC">
+<li><a href="#%E5%A4%96%E9%83%A8%E8%BE%93%E5%85%A5">外部输入</a></li>
+<li><a href="#%E6%A8%A1%E5%9E%8B%E8%A7%84%E6%A0%BC-%E4%B8%8E-%E5%A4%96%E8%A7%82">模型规格 与 外观</a></li>
+<li><a href="#%E9%9A%8F%E6%9C%BA%E6%80%A7">随机性</a>
+<ul>
+<li><a href="#mountain">Mountain</a></li>
+<li><a href="#random-selection">Random Selection</a></li>
+<li><a href="#seed">Seed</a></li>
+</ul>
+</li>
+<li><a href="#%E7%89%A9%E7%90%86%E6%A8%A1%E6%8B%9F">物理模拟</a></li>
+<li><a href="#uv%E8%AE%BE%E7%BD%AE">UV设置</a>
+<ul>
+<li><a href="#auto-uv">Auto UV</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8automatic-trim-texture-%E4%B8%8E-trim-texture-utility">使用Automatic trim texture 与 Trim texture utility</a></li>
+<li><a href="#generate-uv-toggle">Generate UV Toggle</a></li>
+</ul>
+</li>
+<li><a href="#%E8%B4%B4%E5%9B%BE%E7%83%98%E7%84%99-%E4%B8%8E-%E6%9D%90%E8%B4%A8%E8%AE%BE%E7%BD%AE">贴图烘焙 与 材质设置</a></li>
+<li><a href="#pdg">PDG</a></li>
+</ul>
+
+                    </div>
+                    <div class="tog">
+                        <div class="toggleContainer">
+                            <div class="toggle">
+                                <i class="fas fa-angle-double-up"></i>
                             </div>
                         </div>
-                        <div class="col-lg-2"></div>
+                    </div>
+                    <!---------------------------- 评论系统👇 ------------------------->
+                    <div id="comment" class="comment">
+                        <div class="commentcontainer">
+                            
+                                
+                            
+                        </div>
+                    </div>
+                    <!---------------------------- 评论系统👆 ------------------------->
                 </div>
-                <!-- ----------------左侧菜单栏html 👆-------------------------------------->
-                
-                <!------------------ 顶部菜单栏html👇--------->
-                
-                <!------------------ 顶部菜单栏html👆--------->
+                <!-- main标签，pjax渲染时加载以上内容👆 -->
+                <div class="col-md-1 col-lg-2"></div>
+                <div id="bg">
+                </div>
             </div>
+            <!-- ----------------左侧菜单栏html 👆-------------------------------------->
             
-                        <head>
+        </div>
+        <!-- aplayer播放器加载👇 -->
+            
+            <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 </head>
 
@@ -1512,31 +1403,60 @@ menulist.eq(i).show();
     }
 </script>
             
-        </div>
-        <div id="bg">
-        </div>
-        <!------- 背景图加载方式👇----- -->
-        <div id="bgchoice" style="display: none">default
-                    </div>
-                    
-                    <div id="bgurl" style="display:none">\media\images\custom-bgimage.jpg</div>
-                       
-        </div>
-        <!------- 背景图加载方式👆 --------------->
-</div>
-</div>
-
-        <div id="landlord">
-            <div class="message" style="opacity:0"></div>
-            <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
-        </div>
-        <div id="domainname" style="display:none">https://KyaraTyphoon.github.io
+        <!-- aplayer播放器加载👆 -->
+    </div>
+    <!-- 背景图加载方式👇 -->
+    <div id="bgchoice" style="display: none">default
                 </div>
+                
+                <div id="bgurl" style="display:none">\media\images\custom-bgimage.jpg</div>
+                
+    <!-- 背景图加载方式👆 -->
 </body>
-</html>
-<!-------------------- live2d功能👇 --------------------------->
 
-<!-------------------- live2d功能👆--------------------------->
+<script>
+    //初始化
+    //更换twikoo头像
+    setTimeout(replaceAvatar,1000);
+    setTimeout(replaceAvatar,2000);
+    setTimeout(replaceAvatar,8000);
+    // --------为每张图片添加懒加载（lazyload）标签-->懒加载功能 👇------------
+    lazyload();
+    //为文章内所有代码块添加代码复制功能 👇
+    codeinit();
+    // ------代码高亮显示功能-------------
+    hljs.initHighlightingOnLoad();
+    if (shareChoice)
+        shareInit();
+    if (donateChoice)
+        donateInit();
+</script>
+
+<!------------------ 加载live2d模型功能（看板娘）👇 ---------------->
+
+<!------------------ 加载live2d模型功能（看板娘）👆 ---------------->
+
+
+<!----------------------- 返回顶部按钮功能👇 --------------------->
+<script>
+    $(function () {
+        $('.toggleContainer').click(function () {
+            $('html,body').animate({
+                scrollTop: '0px'
+            }, 800);
+        });
+        $(window).scroll(function () {
+            var st = $(window).scrollTop();
+            if (st > 30) {
+                $(".toggleContainer").fadeIn(400);
+            } else {
+                $(".toggleContainer").fadeOut(100);
+            }
+        });
+    });
+</script>
+<!----------------------- 返回顶部按钮功能👆 --------------------->
+
 
 <!------------ 加载全局背景图功能👇（开始时没有写好，这功能有点鸡肋/(ㄒoㄒ)/~~） -->
 <script>
@@ -1558,4 +1478,28 @@ menulist.eq(i).show();
 <!------------ 加载全局背景图功能👆（开始时没有写好，这功能有点鸡肋/(ㄒoㄒ)/~~） -->
 
 
+
+
 <script src="https://KyaraTyphoon.github.io/media/js/index.js"></script>
+
+
+<script>
+    //加载后的事件同步（阅读量、移动端评论等
+    window.onload = function () {
+    //代码块高亮渲染
+    document.querySelectorAll('pre code').forEach((block) => {
+            hljs.highlightBlock(block);
+    });
+        getHotnum();
+        var sharepc = $(".share").eq(0).html();
+        $(".share").eq(1).html(sharepc);   //插件只会寻找一个分享标签渲染，所以需要手动添加到移动端
+        aplayerbtnInit();
+        $(".hljs").css({
+            "padding": "20px"
+        })
+    }
+</script>
+
+<!-- <script src="https://KyaraTyphoon.github.io/media/js/av-min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@3.13.0/dist/av-min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-live-query-min.js"></script> -->
