@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://KyaraTyphoon.github.io</id>
     <title>指定龙场</title>
-    <updated>2022-04-30T16:31:55.058Z</updated>
+    <updated>2022-04-30T16:42:14.725Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://KyaraTyphoon.github.io"/>
     <link rel="self" href="https://KyaraTyphoon.github.io/atom.xml"/>
@@ -20,6 +20,13 @@
 <p>……之前面试被面试官教育，数字资产应该做的实用、对美术人员来说易用。<br>
 因此在此文记录一些看教程和实践的总结与心得，让自己长期注意并取得些许进步。</p>
 </blockquote>
+<h1 id="hda的使用界面">HDA的使用界面</h1>
+<ol>
+<li>Disable When / Hide when 要充分使用；</li>
+<li>文件夹内容与类型规划合理；</li>
+<li>Range 保证变化符合使用需求；</li>
+<li>一些数值不一定要是直接从节点拖入的，也可以是先定义好再分配（直接填写或相乘）到节点。</li>
+</ol>
 <h1 id="外部输入">外部输入</h1>
 <p>创建数字资产时可以选择最多最少有几个输入。</p>
 <ol>
@@ -31,7 +38,7 @@
 <ol>
 <li>使用外部输入（方块、曲线）；</li>
 <li>列数值（半径等）；</li>
-<li>Multi Param的使用以叠加某特征。</li>
+<li>MultiParm Block（List）与Foreach的结合使用以叠加某特征。</li>
 </ol>
 <h1 id="随机性">随机性</h1>
 <h2 id="mountain">Mountain</h2>

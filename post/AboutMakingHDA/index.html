@@ -6,11 +6,10 @@
 ……之前面试被面试官教育，数字资产应该做的实用、对美术人员来说易用。
 因此在此文记录一些看教程和实践的总结与心得，让自己长期注意并取得些许进步。
 
-外部输入
-创建数字资产时可以选择最多最少有几个输入。
+HDA的使用界面
 
-曲线——作为形状的基础；
-世界中的..." />
+Disable When / Hide when 要充分使用；
+文件夹..." />
     <meta name="keywords" content="Houdini,知识梳理" />
     <link rel="stylesheet" href="https://KyaraTyphoon.github.io/media/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://KyaraTyphoon.github.io/styles/main.css">
@@ -287,7 +286,7 @@
                         src='https://KyaraTyphoon.github.io/media/images/music.png' alt="音乐播放器" class="musicbtn"></i></a>
         </div>
         <div class="avatar-border">
-            <img src="https://KyaraTyphoon.github.io/images/avatar.png?v=1651336313435" class="avatar">
+            <img src="https://KyaraTyphoon.github.io/images/avatar.png?v=1651336933545" class="avatar">
         </div>
         <div class="sitename">指定龙场</div>
         <span class="description" data-text='["Bunga Bunga！"]'>&nbsp;</span>
@@ -1173,7 +1172,7 @@ menulist.eq(i).show();
             </div>
             <div class="postinfo-detail">
                 <div class="postdate"><i class="fa fa-calendar"></i>2022-04-30</div>
-                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 2 min read</div>
+                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 3 min read</div>
                 <div class="posttag">
                     
                     <a data-pjax href="https://KyaraTyphoon.github.io/tag/EI4vDnxQP/" class="postlink">
@@ -1200,6 +1199,13 @@ menulist.eq(i).show();
 <p>……之前面试被面试官教育，数字资产应该做的实用、对美术人员来说易用。<br>
 因此在此文记录一些看教程和实践的总结与心得，让自己长期注意并取得些许进步。</p>
 </blockquote>
+<h1 id="hda的使用界面">HDA的使用界面</h1>
+<ol>
+<li>Disable When / Hide when 要充分使用；</li>
+<li>文件夹内容与类型规划合理；</li>
+<li>Range 保证变化符合使用需求；</li>
+<li>一些数值不一定要是直接从节点拖入的，也可以是先定义好再分配（直接填写或相乘）到节点。</li>
+</ol>
 <h1 id="外部输入">外部输入</h1>
 <p>创建数字资产时可以选择最多最少有几个输入。</p>
 <ol>
@@ -1211,7 +1217,7 @@ menulist.eq(i).show();
 <ol>
 <li>使用外部输入（方块、曲线）；</li>
 <li>列数值（半径等）；</li>
-<li>Multi Param的使用以叠加某特征。</li>
+<li>MultiParm Block（List）与Foreach的结合使用以叠加某特征。</li>
 </ol>
 <h1 id="随机性">随机性</h1>
 <h2 id="mountain">Mountain</h2>
@@ -1291,6 +1297,7 @@ menulist.eq(i).show();
 </script>
                     <div class="toc-container">
                         <ul class="markdownIt-TOC">
+<li><a href="#hda%E7%9A%84%E4%BD%BF%E7%94%A8%E7%95%8C%E9%9D%A2">HDA的使用界面</a></li>
 <li><a href="#%E5%A4%96%E9%83%A8%E8%BE%93%E5%85%A5">外部输入</a></li>
 <li><a href="#%E6%A8%A1%E5%9E%8B%E8%A7%84%E6%A0%BC-%E4%B8%8E-%E5%A4%96%E8%A7%82">模型规格 与 外观</a></li>
 <li><a href="#%E9%9A%8F%E6%9C%BA%E6%80%A7">随机性</a>
