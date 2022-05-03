@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://KyaraTyphoon.github.io</id>
     <title>指定龙场</title>
-    <updated>2022-04-30T16:42:14.725Z</updated>
+    <updated>2022-05-03T09:36:47.494Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://KyaraTyphoon.github.io"/>
     <link rel="self" href="https://KyaraTyphoon.github.io/atom.xml"/>
@@ -81,6 +81,7 @@
         </link>
         <updated>2022-04-29T15:37:26.000Z</updated>
         <content type="html"><![CDATA[<h1 id="第一章-电缆工具">🕶 第一章 电缆工具</h1>
+<figure data-type="image" tabindex="1"><img src="https://KyaraTyphoon.github.io/post-images/1651564305483.png" alt="" loading="lazy"></figure>
 <h2 id="1-建模-模拟-减面">1. 建模 模拟 减面</h2>
 <h3 id="maincable">MainCable</h3>
 <p><img src="https://KyaraTyphoon.github.io/post-images/1651247229066.png" alt="" loading="lazy"><br>
@@ -117,6 +118,56 @@ Automatic trim texture 与 Trim texture utility<br>
 可以看到已经根据缩放自动拼排完毕了。<br>
 <img src="https://KyaraTyphoon.github.io/post-images/1651316183346.png" alt="" loading="lazy"><br>
 之后只需要根据ID图制作对应的材质即可。</p>
+<h1 id="第二章-堆叠工具">💼 第二章 堆叠工具</h1>
+<figure data-type="image" tabindex="2"><img src="https://KyaraTyphoon.github.io/post-images/1651564281269.png" alt="" loading="lazy"></figure>
+<blockquote>
+<p>打包记得 Transfer Attributes 给个所有，也就是 <code>*</code> 。</p>
+</blockquote>
+<h2 id="1-data-table">1. Data Table</h2>
+<p>类似 Excel 表格的东西，对虚幻使用者可编辑。新建方法：</p>
+<ol>
+<li>内容侧滑菜单右键 -&gt; 蓝图 -&gt; 结构</li>
+<li>右键 -&gt; 其他 -&gt; 数据表格 -&gt; 选择刚才新建的结构<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1651421742493.png" alt="" loading="lazy"><br>
+需要的数值：<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1651424512414.png" alt="" loading="lazy"></li>
+</ol>
+<h2 id="2-houdini-数据读取-与-方块根据数据初始化">2. Houdini 数据读取 与 方块根据数据初始化</h2>
+<p>注意静态网格体要重命名为 <code>unreal_instance</code> 这样之后的点云就可以顺利实例化了。<br>
+避免命名为 <code>name</code> 导致之后的碰撞模拟出事故。<br>
+copy to points 勾选打包实例化。<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1651564746822.png" alt="" loading="lazy"></p>
+<h2 id="3-撒点-设置旋转与复制实例的准备">3. 撒点、设置旋转与复制实例的准备</h2>
+<p>撒点要设置随机化的旋转、ID、variant整数值，实例要有variant以及枢轴点的正确设置。<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1651566526681.png" alt="" loading="lazy"></p>
+<h2 id="4-拼排到给定面">4. 拼排到给定面</h2>
+<p>这里巧妙地使用了UV Layout节点，使用UV拼排的方法将盒子们拼排到给定面，因此我们的修改数值要从uv改为P，投影到ZX平面，输入设置随机化的iscale值，拼排形状设置为第二输入，缩放设置为Fixed。<br>
+溢出的盒子打包为组之后删除掉。<br>
+如果精度与盒子数量太多会比较耗时。<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1651566888802.png" alt="" loading="lazy"></p>
+<h2 id="5-底部打组-打包准备制作多层">5. 底部打组 打包准备制作多层</h2>
+<p><img src="https://KyaraTyphoon.github.io/post-images/1651567352335.png" alt="" loading="lazy"><br>
+此处的Foreach 迭代次数控制了总共有几层。<br>
+具体的层数要看给的模型与物体缩放、给定簇数。</p>
+<h2 id="6-留下当前最高组">6. 留下当前最高组</h2>
+<figure data-type="image" tabindex="3"><img src="https://KyaraTyphoon.github.io/post-images/1651568258453.png" alt="" loading="lazy"></figure>
+<h2 id="7-分簇">7. 分簇</h2>
+<p>暂时给的分为2簇。<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1651568314052.png" alt="" loading="lazy"></p>
+<h2 id="8-拼排">8. 拼排</h2>
+<p>同前。<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1651568610031.png" alt="" loading="lazy"></p>
+<h2 id="9-属性级别转移-打组转移">9. 属性级别转移、打组转移</h2>
+<p>将 iscale（Prim）转移到 pscale （Point）。<br>
+最底部组转移到点组。<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1651569194340.png" alt="" loading="lazy"></p>
+<h2 id="10-动力解算">10. 动力解算</h2>
+<p>要输出 <code>orient</code> 属性。<br>
+速度以及方向可自定义。<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1651569907490.png" alt="" loading="lazy"></p>
+<h2 id="11-点云">11. 点云</h2>
+<p>保留必要属性，在模型中心创建点。<br>
+<img src="https://KyaraTyphoon.github.io/post-images/1651570076290.png" alt="" loading="lazy"></p>
 ]]></content>
     </entry>
     <entry>
@@ -144,7 +195,7 @@ Automatic trim texture 与 Trim texture utility<br>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Houdini 初学者教程内部分知识点总结 Part 1]]></title>
+        <title type="html"><![CDATA[Houdini 初学者教程内部分知识点总结]]></title>
         <id>https://KyaraTyphoon.github.io/post/Houdini-knowledge-summary-part-1/</id>
         <link href="https://KyaraTyphoon.github.io/post/Houdini-knowledge-summary-part-1/">
         </link>
